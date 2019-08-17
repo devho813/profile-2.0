@@ -1,9 +1,23 @@
-import React from 'react';
+import React, {useState, useEffect, useRef} from 'react';
+import ProfileLoading from '../components/ProfileLoading';
 
 const Profile = () => {
+  const [showProfileLoading, setShowProfileLoading] = useState(true);
+  const timer = useRef();
+
+  useEffect(() => {
+    // timer.current = setTimeout(() => {
+    //   setShowProfileLoading(false);
+    // }, 3000)
+
+    return () => {
+      clearTimeout(timer.current);
+    }
+  }, [])
+  
   return (
     <>
-      {/* { <ProfileLoading /> } */}
+      {showProfileLoading && <ProfileLoading />}
     </>
   )
 }
