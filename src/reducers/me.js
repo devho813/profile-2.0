@@ -2,7 +2,7 @@ import produce from 'immer';
 
 const initialStore = {
   name: 'Chanho Lee',
-  jobName: ['FRONT-END DEVELOPER', 'JAVASCRIPT DEVELOPER'],
+  jobNames: ['FRONT-END DEVELOPER', 'JAVASCRIPT DEVELOPER'],
   basedIn: 'Seoul, Korea'
 }
 

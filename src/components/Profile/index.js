@@ -1,14 +1,15 @@
 import React, {useState, useEffect, useRef} from 'react';
-import ProfileLoading from '../components/ProfileLoading';
+import ProfileLoading from '../ProfileLoading';
+import MainHeader from '../../containers/MainHeader';
 
 const Profile = () => {
   const [showProfileLoading, setShowProfileLoading] = useState(true);
   const timer = useRef();
 
   useEffect(() => {
-    timer.current = setTimeout(() => {
-      setShowProfileLoading(false);
-    }, 3500)
+    // timer.current = setTimeout(() => {
+    //   setShowProfileLoading(false);
+    // }, 5500)
 
     return () => {
       clearTimeout(timer.current);
@@ -18,6 +19,7 @@ const Profile = () => {
   return (
     <>
       {showProfileLoading && <ProfileLoading />}
+      <MainHeader />
     </>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { GlobalStyle } from './GlobalStyle';
-import Profile from './containers/Profile';
+import Profile from './components/Profile';
 
 import { createStore, compose, applyMiddleware } from 'redux';
 import rootReducer from '../src/reducers';

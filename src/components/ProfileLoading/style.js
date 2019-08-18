@@ -1,9 +1,29 @@
 import styled from 'styled-components'
 
 export const LoadingWrapper = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100vw;
   height: 100vh;
   background-color: skyblue;
+  
+  animation: LoadingWrapperHide 2s ease 3.5s forwards;
+
+  @keyframes LoadingWrapperHide {
+    0%{
+      transform: translateY(0%) scale(1);
+    }
+    35%{
+      transform: translateY(-15%) scale(0.55, 0.65) perspective(2000px) rotateX(40deg);
+      opacity: 1;
+    }
+    100%{
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+  
 
   & > div.loading-wrapper{
     width: 100%;
@@ -77,7 +97,6 @@ export const ProgressBar = styled.h1`
     width: 0px;
     height: 100%;
     background-color: #626262;
-
     animation: progressBarState 3.5s ease-in;
     
     @keyframes progressBarState {
