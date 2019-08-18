@@ -63,7 +63,9 @@ export const GlobalStyle = createGlobalStyle`
           url(${require('./assets/fonts/TitanOne/TitanOne-Regular.otf')}) format('opentype');
   } 
 
-  body {
+  html, body {
+    width: 100%;
     font-family:'Noto Sans KR', sans-serif;
+    font-size: 16px;
   }
 `

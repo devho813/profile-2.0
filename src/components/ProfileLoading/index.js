@@ -1,19 +1,24 @@
 import React from 'react'
-import { LoadingWrapper } from './style';
+import { LoadingWrapper, FullNameLoading, ProgressBar } from './style';
 
 const ProfileLoading = () => {
   return (
     <LoadingWrapper>
-      <h1>
-        <span>C</span>
-        <span>h</span>
-        <span>a</span>
-        <span>n</span>
-        <span>h</span>
-        <span>o</span>
-        <span></span>
-        <span>Lee</span>
-      </h1>
+      <div className="loading-wrapper">
+        <FullNameLoading>
+          <span>C</span>
+          <span>h</span>
+          <span>a</span>
+          <span>n</span>
+          <span>h</span>
+          <span>o</span>
+          <span></span>
+          <span className="last-name">Lee</span>
+        </FullNameLoading>
+        <ProgressBar>
+          <div></div>
+        </ProgressBar>
+      </div>
     </LoadingWrapper>
   )
 }
