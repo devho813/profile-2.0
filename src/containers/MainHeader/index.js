@@ -1,14 +1,28 @@
 import React from 'react'
-import {useSelector} from 'react-redux';
-import {MainHeaderWrapper} from './style';
+import { useSelector } from 'react-redux';
+import { MainHeaderWrapper, SubWrapper, Name, JobNameWrapper, BaseIn, ScrollDown } from './style';
 
 const MainHeader = () => {
-  const {name, jobNames, basedIn} = useSelector(store => store.me);
+  const { name, jobNames, basedIn } = useSelector(store => store.me);
 
   return (
     <MainHeaderWrapper>
-      Hi! I`m {name}. 
-      FRONT-END DEVELOPER & JAVASCRIPT DEVELOPER <span>based in {basedIn}.</span>
+      <SubWrapper>
+        <Name>
+          Hi! I&#39;m <strong>{name}.</strong>
+        </Name>
+        <JobNameWrapper>
+          {jobNames.map((job, index) => {
+            return (
+              <span key={job}>
+                {job}{jobNames.length - 1 !== index && <span className="ampersand">&</span>}
+              </span>
+            )
+          })}
+        </JobNameWrapper>
+        <BaseIn>based in <span className="detail-address">{basedIn}.</span></BaseIn>
+      </SubWrapper>
+      <ScrollDown></ScrollDown>
     </MainHeaderWrapper>
   )
 }

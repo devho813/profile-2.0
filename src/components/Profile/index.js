@@ -7,9 +7,9 @@ const Profile = () => {
   const timer = useRef();
 
   useEffect(() => {
-    // timer.current = setTimeout(() => {
-    //   setShowProfileLoading(false);
-    // }, 5500)
+    timer.current = setTimeout(() => {
+      setShowProfileLoading(false);
+    }, 5000)
 
     return () => {
       clearTimeout(timer.current);
@@ -19,7 +19,7 @@ const Profile = () => {
   return (
     <>
       {showProfileLoading && <ProfileLoading />}
-      <MainHeader />
+      {!showProfileLoading && <MainHeader />}
     </>
   )
 }

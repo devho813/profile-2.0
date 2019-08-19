@@ -7,10 +7,11 @@ export const LoadingWrapper = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: skyblue;
+  z-index: 1000;
   
-  animation: LoadingWrapperHide 2s ease 3.5s forwards;
+  animation: LoadingWrapperHideAnim 2s ease 3.5s forwards;
 
-  @keyframes LoadingWrapperHide {
+  @keyframes LoadingWrapperHideAnim {
     0%{
       transform: translateY(0%) scale(1);
     }
@@ -23,7 +24,6 @@ export const LoadingWrapper = styled.div`
       opacity: 0;
     }
   }
-  
 
   & > div.loading-wrapper{
     width: 100%;
@@ -32,12 +32,13 @@ export const LoadingWrapper = styled.div`
     margin: 0;
     position: absolute;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    top: 45%;
+    transform: translate(-50%, -45%);
   }
 `;
 
 export const FullNameLoading = styled.h1`
+  min-width: 300px;
   user-select:none;
 
   span {
@@ -46,7 +47,7 @@ export const FullNameLoading = styled.h1`
     display: inline-block;
     animation: bounce .3s ease infinite alternate;
     font-family: 'Titan One', cursive;
-    font-size: 4.3rem;
+    font-size: 4rem;
     color: #FFF;
     text-shadow: 0 1px 0 #CCC,
                 0 2px 0 #CCC,
@@ -97,9 +98,9 @@ export const ProgressBar = styled.h1`
     width: 0px;
     height: 100%;
     background-color: #626262;
-    animation: progressBarState 3.5s ease-in;
+    animation: progressBarStateAnim 3.5s ease-in forwards;
     
-    @keyframes progressBarState {
+    @keyframes progressBarStateAnim {
       to {
         width: 100%;
       }
