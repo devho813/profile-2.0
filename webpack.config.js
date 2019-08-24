@@ -1,14 +1,17 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require('webpack');
 const path = require('path');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: [
+    '@babel/polyfill',
     'react-hot-loader/patch',
     './public/index.js'
   ],
+  devtool: 'inline-source-map',
   devServer: {
-    host: 'localhost',
+    host: '0.0.0.0',
     port: 3000,
     historyApiFallback: true,
     open: true,
@@ -68,7 +71,8 @@ module.exports = {
       favicon: './public/favicon.ico',
       filename: "index.html"
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new BundleAnalyzerPlugin()
   ],
   output: {
     path: path.resolve(__dirname, 'docs'),

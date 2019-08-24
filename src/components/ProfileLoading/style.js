@@ -1,26 +1,33 @@
 import styled from 'styled-components'
 
-export const LoadingWrapper = styled.div`
+export const LoadingContainer = styled.div`
   position: absolute;
   left: 0;
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: skyblue;
+  overflow: hidden;
   z-index: 1000;
+  background-color: black;
+`;
+
+export const LoadingWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: skyblue;
   
   animation: LoadingWrapperHideAnim 2s ease 3.5s forwards;
 
   @keyframes LoadingWrapperHideAnim {
     0%{
-      transform: translateY(0%) scale(1);
+      transform: translateY(0vh) scale(1);
     }
     35%{
-      transform: translateY(-15%) scale(0.55, 0.65) perspective(2000px) rotateX(40deg);
+      transform: translateY(-15vh) scale(0.55, 0.65) perspective(2000px) rotateX(40deg);
       opacity: 1;
     }
     100%{
-      transform: translateY(100%);
+      transform: translateY(100vh);
       opacity: 0;
     }
   }

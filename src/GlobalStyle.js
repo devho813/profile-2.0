@@ -67,6 +67,12 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     font-family:'Noto Sans KR', sans-serif;
     font-size: 16px;
-    background-color: black;
+    box-sizing: border-box;
+  }
+
+  ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
 `

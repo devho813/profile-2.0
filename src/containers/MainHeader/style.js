@@ -1,9 +1,16 @@
 import styled from 'styled-components';
 import MainHeaderBackgroundImage from "../../assets/images/main_header_background.jpg";
 
-export const MainHeaderWrapper = styled.header`
+export const MainHeaderContainer = styled.div`
   width: 100%;
   height: 100vh;
+  overflow: hidden;
+  background-color: black;
+`;
+
+export const MainHeaderWrapper = styled.header`
+  width: 100%;
+  height: 100%;
   color: white;
   background: rgba(0,0,0,0.8) url(${MainHeaderBackgroundImage});
   background-size: cover;
@@ -13,15 +20,15 @@ export const MainHeaderWrapper = styled.header`
 
   @keyframes MainHeaderShowAnim {
     0%{
-      transform: translateY(100%);
+      transform: translateY(100vh);
       opacity: 0;
     }
     65%{
-      transform: translateY(-15%) scale(0.55, 0.65) perspective(2000px) rotateX(40deg);
+      transform: translateY(-15vh) scale(0.55, 0.65) perspective(2000px) rotateX(40deg);
       opacity: 1;
     }
     100%{
-      transform: translateY(0%) scale(1);
+      transform: translateY(0vh) scale(1);
     }
   }
 `;
