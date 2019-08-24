@@ -52,7 +52,7 @@ export const Name = styled.h1`
 `;
 
 export const JobNameWrapper = styled.h2`
-  margin: 30px 0 5px;
+  margin: 40px 0 5px;
   font-weight: 100;
   font-size: 2rem;
   color: skyblue;

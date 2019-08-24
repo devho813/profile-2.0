@@ -22,6 +22,7 @@ const Profile = () => {
       {showProfileLoading && <ProfileLoading />}
       {!showProfileLoading && <MainHeader />}
       <AboutMe />
+      {/* <Expertise /> */}
     </>
   )
 }

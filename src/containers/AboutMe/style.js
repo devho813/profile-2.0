@@ -38,9 +38,10 @@ export const ContactInfoList = styled.ul`
   margin-top: 30px;
 
   /* ContactInfoItem */
-  li { 
+  li {
+    position: relative;
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 20px;
     width: 60px;
     height: 60px;
     line-height: 70px;
@@ -54,6 +55,64 @@ export const ContactInfoList = styled.ul`
   }
 `;
 
-export const ContactInfoPopup = styled.div`
+const popupColor = 'black';
 
+export const ContactInfoPopup = styled.div`
+  position: relative;
+  background-color: ${popupColor};
+  width: 200px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 15px;
+  transition: opacity .8s;
+  z-index: ${props => props.showPopup && 10};
+  opacity: ${props => props.showPopup ? 1 : 0};
+  ${props => props.showPopup && 
+    `animation: popupShakeAnim 500ms ease-in-out forwards;`
+  };
+  
+  @keyframes popupShakeAnim {
+    0% { 
+      transform: rotate(3deg);
+    }
+    50% {
+    transform: rotate(-4deg);
+    }
+    70% {
+      transform: rotate(4deg);
+    }
+
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: -10px;
+    border-width: 10px 8px 0 8px;
+    border-style: solid;
+    border-color: ${popupColor} transparent transparent transparent;
+    transform: rotate(180deg);
+  }
+
+
+  & > span {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    width: 100%;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: white;
+    cursor: text;
+
+    a{
+      text-decoration: none;
+      cursor: pointer;
+      color: white;
+    }
+  }
 `;
