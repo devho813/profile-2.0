@@ -1,29 +1,29 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {AboutMeWrapper, AboutMeContent, DecoBar, ContactInfoList} from './style';
+import {SectionWrapper, SectionContent, DecoBar, ContactInfoTitle, ContactInfoList} from './style';
 import ContactInfoItem from '../../components/ContactInfoItem';
 
 const AboutMe = () => {
   const {aboutMe, contactInfos} = useSelector(store => store.me);
 
   return (
-    <AboutMeWrapper>
+    <SectionWrapper>
       <h1>
         About me
         <DecoBar></DecoBar>
       </h1>
-      <AboutMeContent>
+      <SectionContent>
         {aboutMe.split('\n').map(line => 
           line.length > 0 && (<span key={line}>{line}<br /></span>)
         )}
-      </AboutMeContent>
-      <h2>Want to know more?</h2>
+      </SectionContent>
+      <ContactInfoTitle>Want to know more?</ContactInfoTitle>
       <ContactInfoList>
         {contactInfos.map(info => 
           <ContactInfoItem key={info[0]} type={info[0]} value={info[1]} />
         )}
       </ContactInfoList>
-    </AboutMeWrapper>
+    </SectionWrapper>
   )
 }
 

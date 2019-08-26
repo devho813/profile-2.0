@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import MainHeaderBackgroundImage from "../../assets/images/main_header_background.jpg";
+import { MainColor } from '../../GlobalStyle';
 
 export const MainHeaderContainer = styled.div`
   width: 100%;
@@ -51,11 +52,21 @@ export const Name = styled.h1`
   }
 `;
 
+export const FirstName = styled.span`
+  display: inline-block;
+  border-top: 5px solid white;
+  margin-right: 10px;
+`;
+export const LastName = styled.span`
+  display: inline-block;
+  border-bottom: 5px solid white;
+`;
+
 export const JobNameWrapper = styled.h2`
   margin: 40px 0 5px;
   font-weight: 100;
   font-size: 2rem;
-  color: skyblue;
+  color: ${MainColor};
   
   span.ampersand{
     display: inline-block;
@@ -71,10 +82,10 @@ export const BaseIn = styled.h3`
 
   span.detail-address {
     cursor: pointer;
-    border-bottom: 1px dashed skyblue;
+    border-bottom: 1px dashed ${MainColor};
 
     :hover{
-      color: skyblue;
+      color: ${MainColor};
     }
   }
 `;

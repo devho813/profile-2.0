@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef} from 'react';
 import ProfileLoading from '../ProfileLoading';
 import MainHeader from '../../containers/MainHeader';
 import AboutMe from '../../containers/AboutMe';
+import Technologie from '../../containers/Technologie';
 
 const Profile = () => {
   const [showProfileLoading, setShowProfileLoading] = useState(true);
@@ -20,9 +21,13 @@ const Profile = () => {
   return (
     <>
       {showProfileLoading && <ProfileLoading />}
-      {!showProfileLoading && <MainHeader />}
-      <AboutMe />
-      {/* <Expertise /> */}
+      {!showProfileLoading && 
+        <>
+          <MainHeader />
+          <AboutMe />
+          <Technologie />
+        </>
+      }
     </>
   )
 }

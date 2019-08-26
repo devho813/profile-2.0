@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components'
 import { normalize } from 'styled-normalize';
 
+export const MainColor = '#42b983';
+
 export const GlobalStyle = createGlobalStyle`
   ${normalize}
 

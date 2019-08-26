@@ -1,18 +1,13 @@
 import styled from 'styled-components';
+import { MainColor } from '../../GlobalStyle';
 
-export const AboutMeWrapper = styled.section`
+export const SectionWrapper = styled.section`
   width: 100%;
   text-align: center;
   padding: 90px 0;
 
   h1{
     position: relative;
-    font-weight: 400;
-  }
-  
-  h2{
-    margin-top: 50px;
-    font-size: 1rem;
     font-weight: 400;
   }
 `;
@@ -22,16 +17,22 @@ export const DecoBar = styled.span`
   margin: 20px auto 0;
   width: 100px;
   height: 1px;
-  border-bottom: 1px solid skyblue;
+  border-bottom: 1px solid ${MainColor};
 `;
 
-export const AboutMeContent = styled.article`
+export const SectionContent = styled.article`
   font-size: 0.9rem;
   line-height: 1.4rem;
   letter-spacing: .5px;
   font-weight: 300;
   font-style: normal;
   margin-top: 40px;
+`;
+
+export const ContactInfoTitle = styled.h2`
+  margin-top: 50px;
+  font-size: 1rem;
+  font-weight: 400;
 `;
 
 export const ContactInfoList = styled.ul`
@@ -55,15 +56,15 @@ export const ContactInfoList = styled.ul`
   }
 `;
 
-const popupColor = 'black';
+const popupColor = MainColor;
 
 export const ContactInfoPopup = styled.div`
   position: relative;
   background-color: ${popupColor};
-  width: 200px;
+  width: 210px;
   height: 30px;
   line-height: 30px;
-  border-radius: 15px;
+  border-radius: 5px;
   transition: opacity .8s;
   z-index: ${props => props.showPopup && 10};
   opacity: ${props => props.showPopup ? 1 : 0};
@@ -99,13 +100,13 @@ export const ContactInfoPopup = styled.div`
   }
 
 
-  & > span {
+  span {
     position: absolute;
     display: inline-block;
     left: 0;
     width: 100%;
-    font-size: 0.8rem;
-    font-weight: 300;
+    font-size: 0.9rem;
+    font-weight: 400;
     color: white;
     cursor: text;
 

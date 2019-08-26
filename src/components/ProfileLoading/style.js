@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+import { MainColor } from '../../GlobalStyle'
 
 export const LoadingContainer = styled.div`
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100vw;
@@ -14,7 +15,7 @@ export const LoadingContainer = styled.div`
 export const LoadingWrapper = styled.div`
   width: 100%;
   height: 100%;
-  background-color: skyblue;
+  background-color: ${MainColor};
   
   animation: LoadingWrapperHideAnim 2s ease 3.5s forwards;
 

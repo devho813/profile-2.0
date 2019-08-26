@@ -1,7 +1,8 @@
 import produce from 'immer';
 
 const initialStore = {
-  name: 'Chanho Lee',
+  firstName: 'Chanho',
+  lastName: 'Lee',
   jobNames: ['FRONT-END DEVELOPER', 'JAVASCRIPT DEVELOPER'],
   basedIn: 'Seoul, Korea',
   aboutMe: `저는 자바스크립트를 좋아하는 프론트엔드 개발자입니다.\n
@@ -13,6 +14,9 @@ const initialStore = {
     ['github', 'https://github.com/devho813'],
     ['gmail', 'devho813@gmail.com'],
     ['kakaoTalk', '차노@HO813'],
+  ],
+  technologies: [
+    'html5', 'css3', 'javascript', 'nodejs', 'webpack', 'typescript', 'angular', 'vue', 'react', 'git'
   ]
 }
 
