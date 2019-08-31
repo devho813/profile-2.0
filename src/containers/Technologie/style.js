@@ -6,6 +6,7 @@ export const SectionWrapper = styled.section`
   text-align: center;
   padding: 90px 0;
   background-color: #fafafa;
+  /* background-color: black; */
 
   h1{
     position: relative;
@@ -33,27 +34,9 @@ export const SectionContent = styled.article`
 
 export const TechBoxWrapper = styled.div`
   position: relative;
-  width: 80%;
-  height: 600px;
+  width: 40vw;
+  max-width: 1020px;
+  height: 25vw;
+  max-height: 600px;
   margin: 0 auto;
-
-  & div:nth-child(1) { position: absolute; left: calc(44% - 216px); bottom: 0; transform: rotate(-45deg); } /* 'html5', */
-  & div:nth-child(2) { position: absolute; left: calc(44% - 108px); bottom: 0; } /* 'css3', */
-  & div:nth-child(3) { position: absolute; left: 44%; bottom: 0; } /* 'javascript', */
-  & div:nth-child(4) { position: absolute; left: calc(44% + 108px); bottom: 0; } /* 'nodejs', */
-  & div:nth-child(5) { position: absolute; left: calc(44% + 216px); bottom: 0; } /* 'webpack', */
-  & div:nth-child(6) { position: absolute; right: 0; bottom: 108px; } /* 'typescript', */
-  & div:nth-child(7) { position: absolute; right: 0; bottom: 216px; } /* 'angular', */
-  & div:nth-child(8) { position: absolute; right: 0; bottom: 324px; } /* 'vue', */
-  & div:nth-child(9) { position: absolute; right: 108px; bottom: 108px; transform: rotate(-45deg); } /* 'react', */
-  & div:nth-child(10) { position: absolute; left: 108px; bottom: 108px; } /* 'git'  */
-`;
-
-export const TechBox = styled.div`
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  border: 3px solid ${MainColor};
-  ${props => 'background: url('+require("../../assets/images/logo/logo_"+props.techName+".svg")+') no-repeat center'};
-  background-size: contain;
 `;
