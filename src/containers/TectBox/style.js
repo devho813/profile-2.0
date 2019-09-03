@@ -6,18 +6,18 @@ export const BackgroundBlack = styled.div`
   height: 100vh;
   left: 0;
   top: 0;
-  background-color: black;
-  opacity: ${({activeState}) => activeState ? 1 : 0};
-  visibility: ${({activeState}) => activeState ? `visible` : 'hidden'};
+  background-color: #222;
   z-index: 1;
-  transition: ${({activeState}) => activeState ? `all .8s;`: `all 2.5s;`};
+  transition: ${({activeState}) => activeState ? `all .8s;`: `all 1.5s;`};
+  opacity: ${({activeState}) => activeState ? 1 : 0};
+  visibility: ${({activeState}) => activeState ? `visible;` : 'hidden;'};
 `;
 
 export const TechBoxContainer = styled.div`
   width: 17%;
   cursor: pointer;
   z-index: 3;
-  opacity: ${({activeState}) => activeState ? 1 : 0.2};
+  opacity: ${({activeState}) => activeState ? 1 : 0.15};
   opacity: ${({allTechActiveState}) => !allTechActiveState && 1};
   transition: opacity .8s;
 
@@ -39,7 +39,7 @@ export const TechBoxContainer = styled.div`
 
 export const TechImage = styled.img`
   width: 100%;
-  box-shadow: 2px 2px 8px black;
+  box-shadow: 2px 2px 5px #222;
   border-radius: 10px;
   background-color: white;
   z-index: 3;

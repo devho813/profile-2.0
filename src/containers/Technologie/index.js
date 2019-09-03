@@ -1,7 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import { SectionWrapper, DecoBar, SectionContent, TechBoxWrapper } from './style';
-import TechBox from '../../components/TectBox';
+import TechBox from '../TectBox';
 
 
 const Technologie = () => {

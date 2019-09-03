@@ -2,14 +2,14 @@ import styled from 'styled-components';
 import MainHeaderBackgroundImage from "../../assets/images/main_header_background.jpg";
 import { MainColor } from '../../GlobalStyle';
 
-export const MainHeaderContainer = styled.div`
+export const MainHeaderContainer = styled.header`
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-color: black;
+  background-color: #222;
 `;
 
-export const MainHeaderWrapper = styled.header`
+export const MainHeaderWrapper = styled.div`
   width: 100%;
   height: 100%;
   color: white;
@@ -17,7 +17,7 @@ export const MainHeaderWrapper = styled.header`
   background-size: cover;
   background-blend-mode: multiply;
 
-  animation: MainHeaderShowAnim 2.5s ease forwards;
+  animation: MainHeaderShowAnim 2s ease forwards;
 
   @keyframes MainHeaderShowAnim {
     0%{
@@ -40,6 +40,7 @@ export const SubWrapper = styled.div`
   top: 45%;
   transform: translateY(-45%);
   text-align: center;
+  z-index: 9;
 `
 
 export const Name = styled.h1`

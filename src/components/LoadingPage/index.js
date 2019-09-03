@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {memo} from 'react'
 import { LoadingContainer, LoadingWrapper, FullNameLoading, ProgressBar } from './style';
 
-const ProfileLoading = () => {
+const LoadingPage = memo(({LoadingDuration}) => {
   return (
     <LoadingContainer>
-      <LoadingWrapper>
+      <LoadingWrapper LoadingDuration={LoadingDuration}>
         <div className="loading-wrapper">
           <FullNameLoading>
             <span>C</span>
@@ -16,13 +16,14 @@ const ProfileLoading = () => {
             <span></span>
             <span className="last-name">Lee</span>
           </FullNameLoading>
-          <ProgressBar>
+          <ProgressBar LoadingDuration={LoadingDuration}>
             <div></div>
           </ProgressBar>
         </div>
       </LoadingWrapper>
     </LoadingContainer>
   )
-}
+});
 
-export default ProfileLoading;
+LoadingPage.displayName = 'LoadingPage';
+export default LoadingPage;
