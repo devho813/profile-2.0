@@ -8,7 +8,7 @@ export const BackgroundBlack = styled.div`
   top: 0;
   background-color: black;
   z-index: 1;
-  transition: ${({activeState}) => activeState ? `all .8s ease-out`: `all .5s ease-in .8s;`};
+  transition: ${({activeState}) => activeState ? `all .6s ease-out`: `all .4s ease-in .6s;`};
   opacity: ${({activeState}) => activeState ? 1 : 0};
   visibility: ${({activeState}) => activeState ? `visible;` : 'hidden;'};
 `;
