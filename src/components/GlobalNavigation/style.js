@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {MainColor} from '../../GlobalStyle';
 
 export const NavigationWrapper = styled.nav`
   position: absolute;
@@ -23,7 +24,7 @@ export const NavigationIcon = styled.div`
   visibility: visible;
 
   &:hover{
-    background-color: skyblue;
+    background-color: ${MainColor};
   }
 
   span{

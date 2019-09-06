@@ -29,8 +29,3 @@ export const SectionContent = styled.div`
   font-style: normal;
   margin-top: 50px;
 `;
-
-export const PortfolioWrapper = styled.div`
-  width: 90%;
-  margin: 0 auto;
-`;

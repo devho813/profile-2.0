@@ -1,8 +1,11 @@
-import React from 'react';
-import { SectionWrapper, DecoBar, SectionContent, PortfolioWrapper} from './style';
-import PortfolioItem from '../PortfolioItem'
+import React, { memo } from 'react';
+import { useSelector } from 'react-redux';
+import { SectionWrapper, DecoBar, SectionContent } from './style';
+import Project from '../Project'
 
-const Portfolio = () => {
+const Portfolio = memo(() => {
+  const { projects } = useSelector(store => store.project);
+
   return (
     <SectionWrapper>
       <h1>
@@ -10,18 +13,14 @@ const Portfolio = () => {
         <DecoBar></DecoBar>
       </h1>
       <SectionContent>
-        <PortfolioWrapper>
-          <PortfolioItem></PortfolioItem>
-          <PortfolioItem></PortfolioItem>
-          <PortfolioItem></PortfolioItem>
-          <PortfolioItem></PortfolioItem>
-          <PortfolioItem></PortfolioItem>
-          <PortfolioItem></PortfolioItem>
-          <PortfolioItem></PortfolioItem>
-        </PortfolioWrapper>
+        {projects.map(project =>
+          <Project key={project.id} project={project}/>
+        )}
       </SectionContent>
     </SectionWrapper>
   );
-};
+});
 
+
+Portfolio.displayName = 'Portfolio';
 export default Portfolio;
