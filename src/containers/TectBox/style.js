@@ -6,9 +6,9 @@ export const BackgroundBlack = styled.div`
   height: 100vh;
   left: 0;
   top: 0;
-  background-color: #222;
+  background-color: black;
   z-index: 1;
-  transition: ${({activeState}) => activeState ? `all .8s;`: `all 1.5s;`};
+  transition: ${({activeState}) => activeState ? `all .8s ease-out`: `all .5s ease-in .8s;`};
   opacity: ${({activeState}) => activeState ? 1 : 0};
   visibility: ${({activeState}) => activeState ? `visible;` : 'hidden;'};
 `;
@@ -57,7 +57,7 @@ export const TechContent = styled.div`
     color: #fff;
     width: 300px;
     position: absolute;
-    left: calc(100% + 30px);
+    left: calc(100% + 20px);
     bottom: calc(100% + 30px);
     z-index: 6;
     padding: 0;

@@ -4,7 +4,7 @@ import { MainColor } from '../../GlobalStyle';
 export const SectionWrapper = styled.section`
   width: 100%;
   text-align: center;
-  padding: 90px 0;
+  padding: 120px 0;
   background-color: #fafafa;
 
   h1{
