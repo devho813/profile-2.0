@@ -7,7 +7,7 @@ import Footer from '../../components/Footer';
 import Portfolio from '../../components/Portfolio';
 
 const Profile = memo(() => {
-  const [showLoadingPage, setShowLoadingPage] = useState(true);
+  const [showLoadingPage, setShowLoadingPage] = useState(false);
   const LoadingDuration = useRef(3) // 로딩 페이지 지속 시간
   const timer = useRef();
 
