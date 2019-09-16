@@ -23,6 +23,7 @@ export const ProjectLabel = styled.div`
   color: white;
   opacity: 0;
   transition: all .8s;
+  transition-property: opacity, bottom;
 
   h4{
     /* title */
@@ -47,7 +48,9 @@ export const ProjectImage = styled.img`
   position: relative;
   top: 0;
   width: 100%;
-  transition: top .5s ease-in .1s;
+  transition: top .5s ease-in .1s, opacity 1s .2s, transform 1s .2s;
+  opacity: ${({inView}) => inView ? 1 : 0};
+  transform: ${({inView}) => inView ? `translateY(0)`:`translateY(10vh)`};
 `;
 
 export const ProjectEnv = styled.span`

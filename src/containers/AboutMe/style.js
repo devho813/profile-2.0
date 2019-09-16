@@ -5,12 +5,19 @@ export const SectionWrapper = styled.section`
   width: 100%;
   text-align: center;
   padding: 90px 0;
-
-  h1{
-    position: relative;
-    font-weight: 400;
-  }
 `;
+
+export const SectionContiner = styled.div`
+  transition: all 1s .2s;
+  transition-property: opacity, transform;
+  opacity: ${({inView}) => inView ? 1 : 0};
+  transform: ${({inView}) => inView ? `translateY(0)`:`translateY(10vh)`};
+`;
+
+export const SectionTitle = styled.h1`
+  position: relative;
+  font-weight: 400;
+`
 
 export const DecoBar = styled.span`
   display: block;

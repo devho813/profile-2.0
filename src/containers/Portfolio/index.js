@@ -1,13 +1,16 @@
 import React, { memo, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { SectionWrapper, DecoBar, SectionContent } from './style';
+import { SectionWrapper, SectionTitle, DecoBar, SectionContent } from './style';
 import Project from '../../components/Project'
 import { SECTION_POSITION_UPDATE } from '../../reducers/section';
+import { useInView } from 'react-intersection-observer';
 
 const Portfolio = memo(() => {
   const { projects } = useSelector(store => store.project);
   const dispatch = useDispatch();
   const positionRef = useRef();
+
+  const [sectionTitleRef, sectionTitleInView] = useInView({threshold: 0, triggerOnce: true});
 
   useEffect(() => {
     dispatch({
@@ -17,12 +20,13 @@ const Portfolio = memo(() => {
     })
   }, []);
 
+
   return (
     <SectionWrapper ref={positionRef}>
-      <h1>
+      <SectionTitle ref={sectionTitleRef} inView={sectionTitleInView}>
         Portfolio
         <DecoBar></DecoBar>
-      </h1>
+      </SectionTitle>
       <SectionContent>
         {projects.map(project =>
           <Project key={project.id} project={project}/>

@@ -9,10 +9,13 @@ import {
   PopupClose
 } from './style';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { useInView } from 'react-intersection-observer';
 
 const Project = memo(({project}) => {
   const [popupState, setPopupState] = useState(false);
   const {title, year, environment, imagePaths} = project;
+  
+  const [projectRef, projectInView] = useInView({threshold: 1, triggerOnce: true});
 
   const onClickProject = useCallback(() => {
     setPopupState(true);
@@ -24,7 +27,9 @@ const Project = memo(({project}) => {
   
   return (
     <ProjectWrapper onClick={onClickProject}>
-      <ProjectImage src={imagePaths[0]}/>
+      <ProjectImage 
+        ref={projectRef} inView={projectInView}
+        src={imagePaths[0]}/>
       <ProjectLabel>
         <h4>{title}<span>({year})</span></h4>
         <ProjectEnv>{environment}</ProjectEnv>

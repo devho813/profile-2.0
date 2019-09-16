@@ -3,11 +3,14 @@ import {useSelector, useDispatch} from 'react-redux';
 import { TechBoxContainer, TechImage, TechContent, BackgroundBlack } from './style';
 import { ACTIVE_TECHNOLOGIE_REQUEST, LEAVE_TECHNOLOGIE_REQUEST } from '../../reducers/me';
 import PropTypes from 'prop-types';
+import { useInView } from 'react-intersection-observer';
 
 const TechBox = memo(({ techId, techName, description }) => {
   const [activeState, setActiveState] = useState(null); // 해당 technologie 활성 상태
   const allTechActiveState = useSelector(store => store.me.allTechActiveState); // 전체 technologie 활성 상태
   const dispatch = useDispatch();
+
+  const [techBoxRef, techBoxInView] = useInView({threshold: 1, triggerOnce: true});
   
   const onMouseEnterTechBox = useCallback(() => {
     setActiveState(true);
@@ -26,7 +29,11 @@ const TechBox = memo(({ techId, techName, description }) => {
         techId={techId}
         onMouseEnter={onMouseEnterTechBox}
         onMouseLeave={onMouseLeaveTechBox}>
-          <TechImage src={require('../../assets/images/logo/logo_' + techName + '.svg')}/>
+          <TechImage 
+            techId={techId}
+            ref={techBoxRef} inView={techBoxInView}
+            src={require('../../assets/images/logo/logo_' + techName + '.svg')}
+          />
           <TechContent>
             <div className="hint-content">
               <p>

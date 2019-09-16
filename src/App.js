@@ -7,6 +7,7 @@ import rootReducer from '../src/reducers';
 import { Provider } from 'react-redux' ;
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from '../src/sagas';
+import 'intersection-observer';
 
 const sagaMiddleware = createSagaMiddleware();
 const middlewares = [sagaMiddleware];

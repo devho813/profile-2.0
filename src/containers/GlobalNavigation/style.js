@@ -10,6 +10,7 @@ export const NavigationWrapper = styled.nav`
   visibility: ${({extend}) => extend ? `visible`: `hidden`};
   background-color: ${({extend}) => extend ? `#222`: `transparent`};
   transition: ${({extend}) => extend ? `all .6s ease-out`: `all .6s ease-in .4s`};
+  transition-property: visibility, background-color;
   z-index: 10;
   overflow: hidden;
 `;
@@ -21,6 +22,7 @@ export const NavigationIcon = styled.div`
   width: 60px;
   height: 60px;
   transition: all .5s;
+  transition-property: background-color;
   cursor: pointer;
   visibility: visible;
 
@@ -82,6 +84,7 @@ export const SectionList = styled.ul`
   left: ${({extend}) => extend ? `0` : `70px`};
   opacity: ${({extend}) => extend ? 1 : 0};
   transition: ${({extend}) => extend ? `all .6s .4s` : `all .6s .3s`};
+  transition-property: left, opacity;
 
   li {
     margin: 50px 0;

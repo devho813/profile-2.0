@@ -12,6 +12,7 @@ export const QuoteWrapper = styled.div`
   top: ${({ extend }) => extend ? `0` : `70px`};
   opacity: ${({ extend }) => extend ? 1 : 0};
   transition: ${({ extend }) => extend ? `all .6s .8s` : `all .6s`};
+  transition-property: left, top, opacity;
 `;
 
 export const QuoteTitle = styled.h3`

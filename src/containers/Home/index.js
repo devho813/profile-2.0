@@ -1,9 +1,9 @@
-import React, {useEffect, useMemo, useCallback, useRef} from 'react'
+import React, {useEffect, useMemo, useCallback, useRef, memo} from 'react'
 import { useSelector } from 'react-redux';
 import { FirstName, LastName, HomeContainer, HomeWrapper, SubWrapper, Name, JobNameWrapper, BaseIn, ScrollDown } from './style';
 import {throttle} from 'lodash';
 
-const Home = () => {
+const Home = memo(() => {
   const { firstName, lastName, jobNames, basedIn } = useSelector(store => store.me);
   const homeWrapperRef = useRef();
   
@@ -56,6 +56,7 @@ const Home = () => {
       </HomeWrapper>
     </HomeContainer>
   )
-}
+})
 
+Home.displayName = 'Home';
 export default Home;

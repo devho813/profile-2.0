@@ -36,6 +36,7 @@ export const RightArrow = styled.div`
   opacity: 0;
   cursor: pointer;
   transition: all .6s .1s;
+  transition-property: right, opacity, visibility;
 `;
 
 export const LeftArrow = styled.div`
@@ -53,6 +54,7 @@ export const LeftArrow = styled.div`
   opacity: 0;
   cursor: pointer;
   transition: all .6s .1s;
+  transition-property: left, opacity, visibility;
 `;
 
 export const Images = styled.img`

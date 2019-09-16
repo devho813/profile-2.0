@@ -9,6 +9,7 @@ export const BackgroundBlack = styled.div`
   background-color: black;
   z-index: 1;
   transition: ${({activeState}) => activeState ? `all .6s ease-out`: `all .4s ease-in .6s;`};
+  transition-property: opacity, visibility;
   opacity: ${({activeState}) => activeState ? 1 : 0};
   visibility: ${({activeState}) => activeState ? `visible;` : 'hidden;'};
 `;
@@ -43,6 +44,11 @@ export const TechImage = styled.img`
   border-radius: 10px;
   background-color: white;
   z-index: 3;
+
+  transition: ${({techId}) => `all 1s .${techId}s`};
+  transition-property: opacity, transform;
+  opacity: ${({inView}) => inView ? 1 : 0};
+  transform: ${({inView}) => inView ? `translateY(0)`:`translateY(10vh)`};
 `;
 
 export const TechContent = styled.div`

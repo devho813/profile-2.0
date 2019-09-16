@@ -6,12 +6,17 @@ export const SectionWrapper = styled.section`
   text-align: center;
   padding: 120px 0;
   background-color: #fafafa;
-
-  h1{
-    position: relative;
-    font-weight: 400;
-  }
 `;
+
+export const SectionTitle = styled.h1`
+  position: relative;
+  font-weight: 400;
+
+  transition: all 1s .2s;
+  transition-property: opacity, transform;
+  opacity: ${({inView}) => inView ? 1 : 0};
+  transform: ${({inView}) => inView ? `translateY(0)`:`translateY(10vh)`};
+`
 
 export const DecoBar = styled.span`
   display: block;

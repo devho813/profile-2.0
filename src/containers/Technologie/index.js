@@ -1,13 +1,16 @@
 import React, {useRef, useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import { SectionWrapper, DecoBar, SectionContent, TechBoxWrapper } from './style';
+import { SectionWrapper, SectionTitle, DecoBar, SectionContent, TechBoxWrapper } from './style';
 import TechBox from '../TectBox';
 import { SECTION_POSITION_UPDATE } from '../../reducers/section';
+import { useInView } from 'react-intersection-observer'
 
 const Technologie = () => {
   const technologies = useSelector(store => store.me.technologies);
   const dispatch = useDispatch();
   const positionRef = useRef();
+
+  const [sectionTitleRef, sectionTitleInView] = useInView({threshold: 1, triggerOnce: true});
 
   useEffect(() => {
     dispatch({
@@ -19,10 +22,10 @@ const Technologie = () => {
   
   return (
     <SectionWrapper ref={positionRef}>
-      <h1>
+      <SectionTitle ref={sectionTitleRef} inView={sectionTitleInView}>
         Technologie
         <DecoBar></DecoBar>
-      </h1>
+      </SectionTitle>
       <SectionContent>
         <TechBoxWrapper>
           {technologies.map((technologie) => {
