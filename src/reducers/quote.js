@@ -1,19 +1,28 @@
 import produce from 'immer';
 
 const initialStore = {
-  quote: "He who has a 'why' to live, can bear with almost any 'how'.",
-  author: 'Friedrich Nietzsche'
+  quote: "",
+  author: "",
+  tempQuote: "Are you tired? If you don't walk today, you should run tomorrow.",
+  tempAuthor: "Carles Puyol"
 }
 
-export const TEST_REQUEST = 'TEST_REQUEST';
-export const TEST_SUCCESS = 'TEST_SUCCESS';
+export const QUOTE_REQUEST = 'QUOTE_REQUEST';
+export const QUOTE_SUCCESS = 'QUOTE_SUCCESS';
+export const QUOTE_FAIRURE = 'QUOTE_FAIRURE';
 
 const reducer = (store = initialStore, action) => {
   return produce(store, (draft) => {
     switch(action.type){
-      case TEST_REQUEST:
+      case QUOTE_REQUEST:
         break;
-      case TEST_SUCCESS:
+      case QUOTE_SUCCESS:
+          draft.quote = action.data.content;
+          draft.author = action.data.author;
+        break;
+      case QUOTE_FAIRURE:
+          draft.quote = '';
+          draft.author = '';
         break;
       default:
         break;

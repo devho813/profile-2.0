@@ -1,5 +1,17 @@
 import styled from 'styled-components';
 import { MainColor } from '../../GlobalStyle';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+export const PopupClose = styled(FontAwesomeIcon)`
+  position: absolute;
+  right: 0;
+  top: -50px;
+  padding: 15px;
+  width: 30px !important;
+  height: 30px !important;
+  color: #eb0058;
+  cursor: pointer;
+`;
 
 export const ProjectLabel = styled.div`
   position: absolute;

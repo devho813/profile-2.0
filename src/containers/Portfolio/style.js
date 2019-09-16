@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { MainColor } from '../../GlobalStyle';
 export const SectionWrapper = styled.section`
-  width: 100%;
+  width: 97%;
   text-align: center;
   padding: 90px 0;
   background-color: white;
+  padding-left: 3%;
 
   h1{
     position: relative;
@@ -28,4 +29,5 @@ export const SectionContent = styled.div`
   font-weight: 300;
   font-style: normal;
   margin-top: 50px;
+  text-align: left;
 `;

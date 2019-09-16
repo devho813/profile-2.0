@@ -1,25 +1,29 @@
 import styled from 'styled-components';
-import MainHeaderBackgroundImage from "../../assets/images/main_header_background.jpg";
+import HomeBackgroundImage from "../../assets/images/home_background.jpg";
 import { MainColor } from '../../GlobalStyle';
 
-export const MainHeaderContainer = styled.header`
+export const HomeContainer = styled.header`
   width: 100%;
   height: 100vh;
   overflow: hidden;
   background-color: #222;
 `;
 
-export const MainHeaderWrapper = styled.div`
-  width: 100%;
-  height: 100%;
+export const HomeWrapper = styled.div`
+  position: relative;
+  width: 120%;
+  height: 120%;
+  left: -10%;
+  top: -10%;  
   color: white;
-  background: rgba(0,0,0,0.8) url(${MainHeaderBackgroundImage});
+  background: rgba(0,0,0,0.8) url(${HomeBackgroundImage});
   background-size: cover;
   background-blend-mode: multiply;
 
-  animation: MainHeaderShowAnim 2s ease forwards;
+  transition: background-position 1s ease-out;
+  animation: HomeShowAnim 2s ease forwards;
 
-  @keyframes MainHeaderShowAnim {
+  @keyframes HomeShowAnim {
     0%{
       transform: translateY(100vh);
       opacity: 0;

@@ -1,58 +1,58 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export const PopupClose = styled(FontAwesomeIcon)`
-  position: absolute;
-  right: 0;
-  top: -55px;
-  width: 30px !important;
-  height: 30px !important;
-  color: #eb0058;
-  cursor: pointer;
+export const Icon = styled(FontAwesomeIcon)`
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  padding: 0.2rem;
 `;
 
-export const GotoSite = styled.span`
+export const GotoSite = styled.div`
+  width: 100%;
+  text-align: right;
 
-  & li a {
+  a{
     text-decoration: none;
-    color: rgba(255,255,255,0.6);
-    font-size: 1.1rem;
-    user-select: none;
+    color: white;
+
+    ${Icon}{
+      margin: 0 8px;
+    }
   }
 `;
 
 export const RightArrow = styled.div`
   position: absolute;
-  width: 20px;
-  height: 20px;
-  padding: 10px;
-  right: 30px;
-  top: 45%;
-  transform: translateY(-45%);
+  width: 7%;
+  height: 98%;
+  right: -7%;
+  top: 0;
   background: url('${require('../../assets/images/icon/icon_double_arrow.svg')}') no-repeat;
   background-size: contain;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(128,128,128,0.2);
+  background-position: center;
   transform: rotate(360deg);
+  visibility: hidden;
   opacity: 0;
   cursor: pointer;
-  transition: opacity .8s;
+  transition: all .6s .1s;
 `;
 
 export const LeftArrow = styled.div`
   position: absolute;
-  width: 20px;
-  height: 20px;
-  padding: 10px;
-  left: 30px;
-  top: 45%;
-  transform: translateY(-45%);
+  width: 7%;
+  height: 98%;
+  left: -7%;
+  top: 0;
   background: url('${require('../../assets/images/icon/icon_double_arrow.svg')}') no-repeat;
   background-size: contain;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(128,128,128,0.2);
+  background-position: center;
   transform: rotate(180deg);
+  visibility: hidden;
   opacity: 0;
   cursor: pointer;
-  transition: opacity .8s;
+  transition: all .6s .1s;
 `;
 
 export const Images = styled.img`
@@ -64,46 +64,53 @@ export const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
 
-  &:hover ${LeftArrow},
-  &:hover ${RightArrow} {
+  &:hover ${LeftArrow}{
+    left: 0;
     opacity: 1;
+    visibility: visible;
+  }
+  &:hover ${RightArrow} {
+    right: 0;
+    opacity: 1;
+    visibility: visible;
   }
 `;
 
 export const DetailRight = styled.ul`
   float: left;
   width: 36%;
-  color: white;
+  color: rgba(255, 255, 255, 0.6);
   text-align: left;
   padding: 0 2%;
-  
-  li{
-    margin-top: 2px;
-    color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+
+  & li{
+    margin-top: 3px;
   }
-  
-  li:nth-child(1){
-    font-weight: 500;
+`;
+
+export const DetailHeader = styled.li`
+  font-weight: 500;
+  font-size: 1rem;
+  color: white;
+`;
+
+export const DetailTech = styled.li`
+  color: white;
+
+  h4{
+    margin: 15px 8px 5px;
     font-size: 1rem;
-    color: white;
+    font-weight: 400;
   }
 
-  li:nth-child(4){
+  span{
+    display: inline-block;
+    margin: 3px;
+    padding: 2px 5px;
+    background-color: #3F729B;
+    font-size: 0.8rem;
     color: white;
-
-    h4{
-      font-weight: 400;
-      margin: 15px 8px 5px;
-    }
-
-    span{
-      display: inline-block;
-      margin: 3px;
-      padding: 2px 5px;
-      background-color: #3F729B;
-      border-radius: 8px;
-      font-size: 0.8rem;
-    }
   }
 `;
 
@@ -117,7 +124,7 @@ export const DetailWrapper = styled.div`
   left: 50%;
   top: 45%;
   transform: translate(-50%, -45%);
-  width: 70%;
+  width: 65%;
 `;
 
 export const ProjectDetail = styled.div`
@@ -128,10 +135,10 @@ export const ProjectDetail = styled.div`
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.85);
   z-index: 100;
-  cursor: default;
   opacity: 0;
+  cursor: auto;
 
-  animation: popupShowAnim .8s ease-out forwards;
+  animation: popupShowAnim .6s ease-out forwards;
 
   @keyframes popupShowAnim {
     from{

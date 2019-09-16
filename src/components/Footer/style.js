@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import backToTheTopIcon from '../../assets/images/icon/icon_back_to_top.svg'
-import MainHeaderBackgroundImage from "../../assets/images/main_header_background.jpg";
+import HomeBackgroundImage from "../../assets/images/home_background.jpg";
 
 export const FooterWrapper = styled.footer`
-  width: 100vw;
+  width: 100%;
   background-color: #222;
   text-align: center;
   padding: 40px 0;
 
-  background: rgba(0,0,0,0.8) url(${MainHeaderBackgroundImage});
+  background: rgba(0,0,0,0.8) url(${HomeBackgroundImage});
   background-size: cover;
   background-blend-mode: multiply;
 `;

@@ -1,13 +1,24 @@
-import React from 'react';
-import {useSelector} from 'react-redux';
+import React, {useRef, useEffect} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 import {SectionWrapper, SectionContent, DecoBar, ContactInfoTitle, ContactInfoList} from './style';
 import ContactInfoItem from '../../components/ContactInfoItem';
+import { SECTION_POSITION_UPDATE } from '../../reducers/section';
 
 const AboutMe = () => {
   const {aboutMe, contactInfos} = useSelector(store => store.me);
+  const dispatch = useDispatch();
+  const positionRef = useRef();
+  
+  useEffect(() => {
+    dispatch({
+      type: SECTION_POSITION_UPDATE,
+      id: 2,
+      data: positionRef.current.offsetTop
+    })
+  }, []);
 
   return (
-    <SectionWrapper>
+    <SectionWrapper ref={positionRef}>
       <h1>
         About me
         <DecoBar></DecoBar>

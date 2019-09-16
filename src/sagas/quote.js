@@ -1,33 +1,32 @@
-import { all, put, fork, takeLatest } from 'redux-saga/effects';
-// import axios from 'axios';
-import { TEST_REQUEST, TEST_SUCCESS } from '../reducers/quote';
+import { all, call, put, fork, takeLatest } from 'redux-saga/effects';
+import axios from 'axios';
+import { QUOTE_REQUEST, QUOTE_SUCCESS, QUOTE_FAIRURE } from '../reducers/quote';
 
-function testAPI() {
-  // 서버와 api 통신
-  // const data = {};
-  // return axios.post('/signup', data);
+function quoteAPI() {
+  return axios.get('https://api.quotable.io/random');
 }
 
-function* testRequest() {
+function* quoteRequest() {
   try {
-    // yield call(testAPI);
+    const res = yield call(quoteAPI);
     yield put({
-      type: TEST_SUCCESS
+      type: QUOTE_SUCCESS,
+      data: res.data
     });
   } catch (e) {
     console.log(e);
-    // yield put({
-    //   type: TEST_FAIRURE
-    // });
+    yield put({
+      type: QUOTE_FAIRURE
+    });
   }
 }
 
-function* watchTestRequest() {
-  yield takeLatest(TEST_REQUEST, testRequest);
+function* watchQuoteRequest() {
+  yield takeLatest(QUOTE_REQUEST, quoteRequest);
 }
 
 export default function* userSaga() {
   yield all([
-    fork(watchTestRequest),
+    fork(watchQuoteRequest),
   ])
 }

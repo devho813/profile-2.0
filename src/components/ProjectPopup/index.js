@@ -9,12 +9,15 @@ import {
   LeftArrow,
   RightArrow,
   GotoSite,
-  PopupClose
+  Icon,
+  DetailHeader,
+  DetailTech
 } from './style';
 import PropTypes from 'prop-types';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
-const ProjectPopup = memo(({project}) => {
+const ProjectPopup = memo(({project, children}) => {
   const { imagePaths, siteLink, githubLink, environment, title, year, position, technologies } = project;
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -48,24 +51,24 @@ const ProjectPopup = memo(({project}) => {
             <RightArrow onClick={onClickArrow('right')}></RightArrow>
           </ImageWrapper>
           <GotoSite>
-            {siteLink && <li><a href={siteLink} target="_blank">Go to website</a></li>}
-            {githubLink && <li><a href={githubLink} target="_blank">Go to GitHub</a></li>}
+            {siteLink && <a href={siteLink} target={'_blank'}><Icon icon={faExternalLinkAlt}/></a>}
+            {githubLink && <a href={githubLink} target={'_blank'}><Icon icon={faGithub}/></a>}
           </GotoSite>
         </DetailLeft>
         <DetailRight>
-          <li>{title} ({year})</li>
+          <DetailHeader>{title} ({year})</DetailHeader>
           <li>· {environment}</li>
           <li>· {position}</li>
-          <li>
+          <DetailTech>
             <h4>사용 기술</h4>
             {technologies.map(tech => 
               <span key={tech}>#{tech}</span>
             )}
-          </li>
+          </DetailTech>
         </DetailRight>
         <div style={{clear: 'both'}}></div>
-        
-        <PopupClose icon={faTimes} />
+
+        {children}
       </DetailWrapper>
     </ProjectDetail>
   );

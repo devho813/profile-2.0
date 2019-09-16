@@ -1,10 +1,11 @@
 import React, {memo, useState, useEffect, useRef} from 'react';
 import LoadingPage from '../LoadingPage';
-import MainHeader from '../../containers/MainHeader';
+import Home from '../../containers/Home';
 import AboutMe from '../../containers/AboutMe';
 import Technologie from '../../containers/Technologie';
 import Footer from '../../components/Footer';
-import Portfolio from '../../components/Portfolio';
+import Portfolio from '../../containers/Portfolio';
+import GlobalNavigation from '../../containers/GlobalNavigation';
 
 const Profile = memo(() => {
   const [showLoadingPage, setShowLoadingPage] = useState(false);
@@ -26,9 +27,10 @@ const Profile = memo(() => {
       {showLoadingPage && <LoadingPage LoadingDuration={LoadingDuration.current}/>}
       {!showLoadingPage && 
         <>
-          <MainHeader />
+          <GlobalNavigation />
+          <Home />
           <AboutMe />
-          <Technologie />
+          <Technologie/>
           <Portfolio />
           <Footer />
         </>

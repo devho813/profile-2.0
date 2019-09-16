@@ -6,15 +6,21 @@ import {
   ProjectLabel,
   ProjectEnv,
   ProjectImage,
+  PopupClose
 } from './style';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const Project = memo(({project}) => {
-  const {title, year, environment, imagePaths} = project;
   const [popupState, setPopupState] = useState(false);
+  const {title, year, environment, imagePaths} = project;
 
   const onClickProject = useCallback(() => {
     setPopupState(true);
   }, []);
+  
+  const onClosePopup = useCallback(() => {
+    setTimeout(() => setPopupState(false));
+  }, [popupState]);
   
   return (
     <ProjectWrapper onClick={onClickProject}>
@@ -23,8 +29,11 @@ const Project = memo(({project}) => {
         <h4>{title}<span>({year})</span></h4>
         <ProjectEnv>{environment}</ProjectEnv>
       </ProjectLabel>
-      
-      {popupState && <ProjectPopup project={project}/>}
+      {popupState && (
+        <ProjectPopup project={project}>
+          <PopupClose icon={faTimes} onClick={onClosePopup} />
+        </ProjectPopup>
+      )}
     </ProjectWrapper>
   );
 });

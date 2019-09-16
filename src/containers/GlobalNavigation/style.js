@@ -2,15 +2,16 @@ import styled from 'styled-components';
 import {MainColor} from '../../GlobalStyle';
 
 export const NavigationWrapper = styled.nav`
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   visibility: ${({extend}) => extend ? `visible`: `hidden`};
   background-color: ${({extend}) => extend ? `#222`: `transparent`};
-  transition: all .8s;
+  transition: ${({extend}) => extend ? `all .6s ease-out`: `all .6s ease-in .4s`};
   z-index: 10;
+  overflow: hidden;
 `;
 
 export const NavigationIcon = styled.div`
@@ -34,7 +35,9 @@ export const NavigationIcon = styled.div`
     top: 50%;
     width: 60%;
     height: 3px;
-    background-color: white;
+    background-color: ${({navIconColorChange}) => 
+      navIconColorChange ? 'black' : 'white'
+    };
     transform: translate(-50%, -50%);
     transition: all .5s;
   }
@@ -60,5 +63,38 @@ export const NavigationIcon = styled.div`
     background-color: #222;
     width: 40%;
     height: 2px;
+  }
+`;
+
+
+export const NavigationContent = styled.div`
+  position: absolute;
+  left: 70%;
+  top: 50%;
+  width: 90%;
+  transform: translate(-70%, -50%);
+`;
+
+export const SectionList = styled.ul`
+  position: relative;
+  float: right;
+  width: 20%;
+  left: ${({extend}) => extend ? `0` : `70px`};
+  opacity: ${({extend}) => extend ? 1 : 0};
+  transition: ${({extend}) => extend ? `all .6s .4s` : `all .6s .3s`};
+
+  li {
+    margin: 50px 0;
+    color: white;
+    font-size: 1.7rem;
+    font-weight: 200;
+    text-align: left;
+    cursor: pointer;
+
+    transition: color .6s;
+
+    &:hover {
+      color: ${MainColor};
+    }
   }
 `;
