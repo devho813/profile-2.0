@@ -8,7 +8,7 @@ import Portfolio from '../../containers/Portfolio';
 import GlobalNavigation from '../../containers/GlobalNavigation';
 
 const Profile = memo(() => {
-  const [showLoadingPage, setShowLoadingPage] = useState(false);
+  const [showLoadingPage, setShowLoadingPage] = useState(true);
   const LoadingDuration = useRef(3) // 로딩 페이지 지속 시간
   const timer = useRef();
 
