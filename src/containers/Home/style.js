@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import HomeBackgroundImage from "../../assets/images/home_background.jpg";
+import HomeBackgroundImage from "../../assets/images/home_background.png";
 import { MainColor } from '../../GlobalStyle';
 
 export const HomeContainer = styled.header`
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-color: #222;
+  background-color: #8280AB;
 `;
 
 export const HomeWrapper = styled.div`
@@ -16,8 +16,9 @@ export const HomeWrapper = styled.div`
   left: -10%;
   top: -10%;  
   color: white;
-  background: rgba(0,0,0,0.8) url(${HomeBackgroundImage});
-  background-size: cover;
+  background: rgba(0,0,0,0.4) url(${HomeBackgroundImage});
+  background-size: 120vw 110vh;
+  background-repeat: no-repeat;
   background-blend-mode: multiply;
 
   transition: background-position 1s ease-out;
@@ -36,21 +37,27 @@ export const HomeWrapper = styled.div`
       transform: translateY(0vh) scale(1);
     }
   }
+
+  @media (max-width: 1300px){
+    background-size: 120vw 90vh;
+  }
 `;
 
 export const SubWrapper = styled.div`
   position: absolute;
   width: 100%;
-  top: 45%;
-  transform: translateY(-45%);
+  top: 38%;
+  transform: translateY(-38%);
   text-align: center;
   z-index: 9;
+
+  font-family: 'Stay Writer', sans-serif;
 `
 
 export const Name = styled.h1`
   margin: 0;
   font-weight: 100;
-  font-size: 3rem;
+  font-size: 4rem;
 
   strong{
     font-weight: 900;
@@ -68,9 +75,9 @@ export const LastName = styled.span`
 `;
 
 export const JobNameWrapper = styled.h2`
-  margin: 40px 0 5px;
+  margin: 30px 0 5px;
   font-weight: 100;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: ${MainColor};
   
   span.ampersand{
@@ -83,7 +90,7 @@ export const JobNameWrapper = styled.h2`
 export const BaseIn = styled.h3`
   margin: 0;
   font-weight: 100;
-  font-size: 1.7rem;
+  font-size: 1.8rem;
 
   span.detail-address {
     cursor: pointer;

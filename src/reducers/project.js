@@ -67,6 +67,19 @@ const initialStore = {
         require('../assets/images/project/profile/project_profile_5.png'),
       ]
     },
+    {
+      id: 5,
+      title: 'Profile 2.0',
+      year: '2019',
+      environment: 'WEB',
+      position: '프론트 개발 + 디자인',
+      siteLink: 'https://chanho.me',
+      githubLink: 'https://github.com/devho813/profile-2.0',
+      technologies: ['HTML5', 'CSS3', 'Javscript', 'React', 'Redux', 'Redux-Saga', 'immer', 'styled-components'],
+      imagePaths: [
+        require('../assets/images/project/profile/project_profile_1.png'),
+      ]
+    },
   ]
 }
 

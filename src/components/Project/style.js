@@ -13,6 +13,15 @@ export const PopupClose = styled(FontAwesomeIcon)`
   cursor: pointer;
 `;
 
+export const ProjectImage = styled.img`
+  position: relative;
+  top: 0;
+  width: 100%;
+  transition: top .5s ease-in .1s, opacity 1s .2s, transform 1s .2s;
+  opacity: ${({inView}) => inView ? 1 : 0};
+  transform: ${({inView}) => inView ? `translateY(0)`:`translateY(10vh)`};
+`;
+
 export const ProjectLabel = styled.div`
   position: absolute;
   width: 100%;
@@ -29,7 +38,7 @@ export const ProjectLabel = styled.div`
     /* title */
     padding: 1% 2% 0%;
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.6);
     
@@ -38,25 +47,16 @@ export const ProjectLabel = styled.div`
       display: inline-block;
       margin-left: 3px;
       font-weight: 400;
-      font-size: 0.8rem;
+      font-size: 1.1rem;
       vertical-align: middle;
     }
   }
 `;
 
-export const ProjectImage = styled.img`
-  position: relative;
-  top: 0;
-  width: 100%;
-  transition: top .5s ease-in .1s, opacity 1s .2s, transform 1s .2s;
-  opacity: ${({inView}) => inView ? 1 : 0};
-  transform: ${({inView}) => inView ? `translateY(0)`:`translateY(10vh)`};
-`;
-
 export const ProjectEnv = styled.span`
   display: inline-block;
   padding: 0% 2% 1%;
-  font-size: 0.8rem;
+  font-size: 1.1rem;
   font-weight: 500;
 `;
 

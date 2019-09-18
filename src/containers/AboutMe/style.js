@@ -1,22 +1,21 @@
 import styled from 'styled-components';
-import { MainColor } from '../../GlobalStyle';
+import { MainColor, inViewTransition } from '../../GlobalStyle';
 
 export const SectionWrapper = styled.section`
   width: 100%;
   text-align: center;
   padding: 90px 0;
-`;
 
-export const SectionContiner = styled.div`
-  transition: all 1s .2s;
-  transition-property: opacity, transform;
-  opacity: ${({inView}) => inView ? 1 : 0};
-  transform: ${({inView}) => inView ? `translateY(0)`:`translateY(10vh)`};
+  background: linear-gradient(to bottom, #4E4D67, #3a3953);
 `;
 
 export const SectionTitle = styled.h1`
   position: relative;
+  color: white;
+  font-size: 2.3rem;
   font-weight: 400;
+
+  ${inViewTransition};
 `
 
 export const DecoBar = styled.span`
@@ -28,22 +27,30 @@ export const DecoBar = styled.span`
 `;
 
 export const SectionContent = styled.article`
-  font-size: 0.9rem;
-  line-height: 1.4rem;
+  font-size: 1.2rem;
+  line-height: 1.7rem;
   letter-spacing: .5px;
   font-weight: 300;
   font-style: normal;
+  color: white;
   margin-top: 40px;
+
+  ${inViewTransition};
 `;
 
 export const ContactInfoTitle = styled.h2`
   margin-top: 50px;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 400;
+  color: white;
+
+  ${inViewTransition};
 `;
 
 export const ContactInfoList = styled.ul`
   margin-top: 30px;
+
+  ${inViewTransition};
 
   /* ContactInfoItem */
   li {
@@ -63,11 +70,11 @@ export const ContactInfoList = styled.ul`
   }
 `;
 
-const popupColor = MainColor;
-
 export const ContactInfoPopup = styled.div`
   position: relative;
-  background-color: ${popupColor};
+  top: 5px;
+  left: -3px;
+  background-color: ${MainColor};
   width: 210px;
   height: 30px;
   line-height: 30px;
@@ -102,7 +109,7 @@ export const ContactInfoPopup = styled.div`
     top: -10px;
     border-width: 10px 8px 0 8px;
     border-style: solid;
-    border-color: ${popupColor} transparent transparent transparent;
+    border-color: ${MainColor} transparent transparent transparent;
     transform: rotate(180deg);
   }
 
@@ -112,7 +119,7 @@ export const ContactInfoPopup = styled.div`
     display: inline-block;
     left: 0;
     width: 100%;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     font-weight: 400;
     color: white;
     cursor: text;

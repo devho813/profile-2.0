@@ -1,21 +1,22 @@
 import styled from 'styled-components';
-import { MainColor } from '../../GlobalStyle';
+import { MainColor, inViewTransition } from '../../GlobalStyle';
 export const SectionWrapper = styled.section`
   width: 97%;
   text-align: center;
   padding: 90px 0;
   background-color: white;
   padding-left: 3%;
+
+  background: linear-gradient(to bottom, #1c1b35, #222);
 `;
 
 export const SectionTitle = styled.h1`
   position: relative;
+  color: white;
+  font-size: 2.3rem;
   font-weight: 400;
   
-  transition: all 1s .2s;
-  transition-property: opacity, transform;
-  opacity: ${({inView}) => inView ? 1 : 0};
-  transform: ${({inView}) => inView ? `translateY(0)`:`translateY(10vh)`};
+  ${inViewTransition};
 `
 
 export const DecoBar = styled.span`

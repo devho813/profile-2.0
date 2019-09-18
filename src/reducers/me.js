@@ -3,7 +3,8 @@ import produce from 'immer';
 const initialStore = {
   firstName: 'Chanho',
   lastName: 'Lee',
-  jobNames: ['FRONT-END DEVELOPER', 'JAVASCRIPT DEVELOPER'],
+  // jobNames: ['FRONT-END DEVELOPER', 'JAVASCRIPT DEVELOPER'],
+  jobNames: ['Front End Developer', 'Javascript Developer'],
   basedIn: 'Seoul, Korea',
   aboutMe: `저는 자바스크립트를 좋아하는 프론트엔드 개발자입니다.\n
   18년도 1월부터 실무를 시작하였고 퍼블리싱을 시작으로 Angular 2+, Vue.js 를 거쳐 현재는 React 에 푹 빠져있습니다.\n

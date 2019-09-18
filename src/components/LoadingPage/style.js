@@ -1,5 +1,4 @@
-import styled from 'styled-components'
-import { MainColor } from '../../GlobalStyle'
+import styled from 'styled-components';
 
 export const LoadingContainer = styled.div`
   position: fixed;
@@ -9,13 +8,13 @@ export const LoadingContainer = styled.div`
   height: 100vh;
   overflow: hidden;
   z-index: 1000;
-  background-color: #222;
+  background-color: #8280AB;
 `;
 
 export const LoadingWrapper = styled.div`
   width: 100%;
   height: 100%;
-  background-color: ${MainColor};
+  background-color: #8F7C89;
   
   animation: ${({LoadingDuration}) => 
     `LoadingWrapperHideAnim 2s ease ${LoadingDuration}s forwards`
@@ -107,7 +106,7 @@ export const ProgressBar = styled.h1`
   div {
     width: 0px;
     height: 100%;
-    background-color: #626262;
+    background-color: #222;
     animation: ${({LoadingDuration}) => 
       `progressBarStateAnim ${LoadingDuration}s ease-in forwards`
     };

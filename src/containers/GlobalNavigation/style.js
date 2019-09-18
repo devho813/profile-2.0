@@ -37,9 +37,7 @@ export const NavigationIcon = styled.div`
     top: 50%;
     width: 60%;
     height: 3px;
-    background-color: ${({navIconColorChange}) => 
-      navIconColorChange ? 'black' : 'white'
-    };
+    background-color: white;
     transform: translate(-50%, -50%);
     transition: all .5s;
   }
@@ -89,7 +87,7 @@ export const SectionList = styled.ul`
   li {
     margin: 50px 0;
     color: white;
-    font-size: 1.7rem;
+    font-size: 2rem;
     font-weight: 200;
     text-align: left;
     cursor: pointer;

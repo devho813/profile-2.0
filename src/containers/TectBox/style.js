@@ -15,7 +15,7 @@ export const BackgroundBlack = styled.div`
 `;
 
 export const TechBoxContainer = styled.div`
-  width: 16%;
+  width: 15%;
   cursor: pointer;
   z-index: 3;
   opacity: ${({activeState}) => activeState ? 1 : 0.15};
@@ -24,16 +24,16 @@ export const TechBoxContainer = styled.div`
 
   ${({techId}) => {
     switch(techId){
-      case 1: return `position: absolute; left: 5%; bottom: 0;`;
-      case 2: return `position: absolute; left: 23%; bottom: 0;`;
-      case 3: return `position: absolute; left: 40%; bottom: 0;`;
-      case 4: return `position: absolute; left: 57%; bottom: 0;`;
+      case 1: return `position: absolute; left: 9.5%; bottom: 0;`;
+      case 2: return `position: absolute; left: 25%; bottom: 0;`;
+      case 3: return `position: absolute; left: 42%; bottom: 0;`;
+      case 4: return `position: absolute; left: 59.5%; bottom: 0;`;
       case 5: return `position: absolute; left: 75%; bottom: 0;`;
-      case 6: return `position: absolute; left: 77.5%; bottom: 26.5%;`;
-      case 7: return `position: absolute; left: 73%; bottom: 52.5%;`;
-      case 8: return `position: absolute; left: 26%; bottom: 26.5%;`;
-      case 9: return `position: absolute; left: 59.5%; bottom: 29.5%; transform: rotate(-28deg);`;
-      case 10: return `position: absolute; left: 41%; bottom: 45.5%; transform: rotate(-14deg);`;
+      case 6: return `position: absolute; left: 77.5%; bottom: 24.5%;`;
+      case 7: return `position: absolute; left: 73%; bottom: 49.5%;`;
+      case 8: return `position: absolute; left: 34.5%; bottom: 24.5%;`;
+      case 9: return `position: absolute; left: 60.5%; bottom: 27.5%; transform: rotate(-28deg);`;
+      case 10: return `position: absolute; left: 48%; bottom: 47%; transform: rotate(-14deg);`;
     }
   }}
 `;

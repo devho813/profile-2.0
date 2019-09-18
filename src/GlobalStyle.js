@@ -1,73 +1,22 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 import { normalize } from 'styled-normalize';
+import FontSetting from './FontSetting';
 
-export const MainColor = '#5b99C2';
+export const MainColor = 'darksalmon';
+export const inViewTransition = css`
+  transition: all 1s .2s;
+  transition-property: opacity, transform;
+  opacity: ${({inView}) => inView ? 1 : 0};
+  transform: ${({inView}) => inView ? `translateY(0)`:`translateY(10vh)`};
+`;
 
 export const GlobalStyle = createGlobalStyle`
   ${normalize}
-
-  /* You can continue writing global styles here */
-  @font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 100;
-    src: url(${require('./assets/fonts/NotoSansKR/NotoSansKR-Thin.woff2')}) format('woff2'),
-        url(${require('./assets/fonts/NotoSansKR/NotoSansKR-Thin.woff')}) format('woff'),
-        url(${require('./assets/fonts/NotoSansKR/NotoSansKR-Thin.otf')}) format('opentype');
-  }
-  @font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 300;
-    src: url(${require('./assets/fonts/NotoSansKR/NotoSansKR-Light.woff2')}) format('woff2'),
-        url(${require('./assets/fonts/NotoSansKR/NotoSansKR-Light.woff')}) format('woff'),
-        url(${require('./assets/fonts/NotoSansKR/NotoSansKR-Light.otf')}) format('opentype');
-  }
-  @font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    src: url(${require('./assets/fonts/NotoSansKR/NotoSansKR-Regular.woff2')}) format('woff2'),
-          url(${require('./assets/fonts/NotoSansKR/NotoSansKR-Regular.woff')}) format('woff'),
-          url(${require('./assets/fonts/NotoSansKR/NotoSansKR-Regular.otf')}) format('opentype');
-  }
-  @font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 500;
-    src: url(${require('./assets/fonts/NotoSansKR/NotoSansKR-Medium.woff2')}) format('woff2'),
-          url(${require('./assets/fonts/NotoSansKR/NotoSansKR-Medium.woff')}) format('woff'),
-          url(${require('./assets/fonts/NotoSansKR/NotoSansKR-Medium.otf')}) format('opentype');
-  }
-  @font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 700;
-    src: url(${require('./assets/fonts/NotoSansKR/NotoSansKR-Bold.woff2')}) format('woff2'),
-          url(${require('./assets/fonts/NotoSansKR/NotoSansKR-Bold.woff')}) format('woff'),
-          url(${require('./assets/fonts/NotoSansKR/NotoSansKR-Bold.otf')}) format('opentype');
-  }
-  @font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 900;
-    src: url(${require('./assets/fonts/NotoSansKR/NotoSansKR-Black.woff2')}) format('woff2'),
-          url(${require('./assets/fonts/NotoSansKR/NotoSansKR-Black.woff')}) format('woff'),
-          url(${require('./assets/fonts/NotoSansKR/NotoSansKR-Black.otf')}) format('opentype');
-  } 
-
-  @font-face {
-    font-family: 'Titan One';
-    font-style: normal;
-    font-weight: 400;
-    src: url(${require('./assets/fonts/TitanOne/TitanOne-Regular.ttf')}) format('truetype'),
-          url(${require('./assets/fonts/TitanOne/TitanOne-Regular.woff')}) format('woff'),
-          url(${require('./assets/fonts/TitanOne/TitanOne-Regular.otf')}) format('opentype');
-  } 
+  ${FontSetting}
 
   html, body {
     width: 100%;
-    font-family:'Noto Sans KR', sans-serif;
+    font-family: 'Stay Writer', 'SSShinb7', 'Noto Sans KR', sans-serif;
     font-size: 16px;
     box-sizing: border-box;
   }

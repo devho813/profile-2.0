@@ -11,7 +11,8 @@ import {
   GotoSite,
   Icon,
   DetailHeader,
-  DetailTech
+  DetailTech,
+  HashSymbol
 } from './style';
 import PropTypes from 'prop-types';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
@@ -62,12 +63,13 @@ const ProjectPopup = memo(({project, children}) => {
           <DetailTech>
             <h4>사용 기술</h4>
             {technologies.map(tech => 
-              <span key={tech}>#{tech}</span>
+              <span key={tech}>
+                <HashSymbol>#</HashSymbol>{tech}
+              </span>
             )}
           </DetailTech>
         </DetailRight>
         <div style={{clear: 'both'}}></div>
-
         {children}
       </DetailWrapper>
     </ProjectDetail>

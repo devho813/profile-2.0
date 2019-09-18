@@ -38,22 +38,22 @@ const Home = memo(() => {
 
   return (
     <HomeContainer>
-      <HomeWrapper onMouseMove={onMouseMove} ref={homeWrapperRef}>
-        <SubWrapper>
-          <Name>
-            Hi! I&#39;m &nbsp;
-            <strong>
-              <FirstName>{firstName}</FirstName>
-              <LastName>{lastName}.</LastName>
-            </strong>
-          </Name>
-          <JobNameWrapper>
-            {getJobNames}
-          </JobNameWrapper>
-          <BaseIn>based in <span className="detail-address">{basedIn}.</span></BaseIn>
-        </SubWrapper>
-        <ScrollDown></ScrollDown>
-      </HomeWrapper>
+        <HomeWrapper onMouseMove={onMouseMove} ref={homeWrapperRef}>
+          <SubWrapper>
+            <Name>
+              Hi! I&#39;m &nbsp;
+              <strong>
+                <FirstName>{firstName}</FirstName>
+                <LastName>{lastName}.</LastName>
+              </strong>
+            </Name>
+            <JobNameWrapper>
+              {getJobNames}
+            </JobNameWrapper>
+            <BaseIn>based in <span className="detail-address">{basedIn}.</span></BaseIn>
+          </SubWrapper>
+          <ScrollDown></ScrollDown>
+        </HomeWrapper>
     </HomeContainer>
   )
 })

@@ -84,7 +84,7 @@ export const DetailRight = styled.ul`
   color: rgba(255, 255, 255, 0.6);
   text-align: left;
   padding: 0 2%;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 
   & li{
     margin-top: 3px;
@@ -93,7 +93,7 @@ export const DetailRight = styled.ul`
 
 export const DetailHeader = styled.li`
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: white;
 `;
 
@@ -102,7 +102,7 @@ export const DetailTech = styled.li`
 
   h4{
     margin: 15px 8px 5px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 400;
   }
 
@@ -111,9 +111,15 @@ export const DetailTech = styled.li`
     margin: 3px;
     padding: 2px 5px;
     background-color: #3F729B;
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     color: white;
   }
+`;
+
+export const HashSymbol = styled.i`
+  display: inline-block;
+  font-style: normal;
+  font-family: 'Noto Sans KR', sans-serif;
 `;
 
 export const DetailLeft = styled.div`
@@ -151,3 +157,4 @@ export const ProjectDetail = styled.div`
     }
   }
 `;
+
