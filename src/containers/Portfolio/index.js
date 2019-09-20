@@ -4,6 +4,7 @@ import { SectionWrapper, SectionTitle, DecoBar, SectionContent } from './style';
 import Project from '../../components/Project'
 import { SECTION_POSITION_UPDATE } from '../../reducers/section';
 import { useInView } from 'react-intersection-observer';
+import Fish from '../../components/Fish';
 
 const Portfolio = memo(() => {
   const { projects } = useSelector(store => store.project);
@@ -32,6 +33,7 @@ const Portfolio = memo(() => {
           <Project key={project.id} project={project}/>
         )}
       </SectionContent>
+      <Fish fishId={4}/>
     </SectionWrapper>
   );
 });

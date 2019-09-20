@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 import { MainColor, inViewTransition } from '../../GlobalStyle';
 export const SectionWrapper = styled.section`
+  position: relative;
   width: 97%;
   text-align: center;
   padding: 90px 0;
   background-color: white;
   padding-left: 3%;
+  overflow: hidden;
 
   background: linear-gradient(to bottom, #1c1b35, #222);
 `;
@@ -28,6 +30,7 @@ export const DecoBar = styled.span`
 `;
 
 export const SectionContent = styled.div`
+  position: relative;
   width: 100%;
   font-size: 0.9rem;
   line-height: 1.4rem;
@@ -36,4 +39,5 @@ export const SectionContent = styled.div`
   font-style: normal;
   margin-top: 50px;
   text-align: left;
+  z-index: 10;
 `;

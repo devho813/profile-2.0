@@ -4,6 +4,7 @@ import {SectionWrapper, SectionTitle, SectionContent, DecoBar, ContactInfoTitle,
 import ContactInfoItem from '../../components/ContactInfoItem';
 import { SECTION_POSITION_UPDATE } from '../../reducers/section';
 import { useInView } from 'react-intersection-observer';
+import Fish from '../../components/Fish';
 
 const AboutMe = () => {
   const {aboutMe, contactInfos} = useSelector(store => store.me);
@@ -25,6 +26,7 @@ const AboutMe = () => {
 
   return (
     <SectionWrapper ref={positionRef}>
+        <Fish fishId={1}/>
         <SectionTitle ref={sectionTitleRef} inView={sectionTitleInView}>
           About me
           <DecoBar></DecoBar>
@@ -42,6 +44,7 @@ const AboutMe = () => {
             <ContactInfoItem key={info[0]} type={info[0]} value={info[1]} />
           )}
         </ContactInfoList>
+        <Fish fishId={2}/>
     </SectionWrapper>
   )
 }

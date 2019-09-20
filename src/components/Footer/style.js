@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import backToTheTopIcon from '../../assets/images/icon/icon_back_to_top.svg'
 
 export const FooterWrapper = styled.footer`
   width: 100%;
@@ -11,20 +10,33 @@ export const FooterWrapper = styled.footer`
 export const BackToTop = styled.div`
   position: fixed;
   right: 1vw;
-  bottom: 2vh;
-  width: 40px;
-  height: 40px;
-  padding: 5px;
-  background: url(${backToTheTopIcon}) no-repeat;
-  background-size: contain;
-  background-position: center;
+  bottom: 3vh;
+  padding: 10px;
   cursor: pointer;
   transition: opacity .5s, transform .5s;
   opacity: ${({backToTopState}) => backToTopState ? 1:0};
   transform: ${({backToTopState}) => backToTopState ? 
-    `translateX(0)`
-  :
-    `translateX(100px)`};
+    `translateY(0)`
+    :
+    `translateY(100px)`
+  };
+  color: white;
+  font-size: 1.2rem;
+
+  i{
+    display: block;
+    font-style: normal;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+  }
+
+  span {
+    display: block;
+    transform: rotate(90deg);
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 0.8rem;
+    font-weight: 300;
+  }
 `;
 
 export const Copyright = styled.div`

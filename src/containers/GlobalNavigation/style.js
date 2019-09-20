@@ -11,7 +11,7 @@ export const NavigationWrapper = styled.nav`
   background-color: ${({extend}) => extend ? `#222`: `transparent`};
   transition: ${({extend}) => extend ? `all .6s ease-out`: `all .6s ease-in .4s`};
   transition-property: visibility, background-color;
-  z-index: 10;
+  z-index: 1000;
   overflow: hidden;
 `;
 

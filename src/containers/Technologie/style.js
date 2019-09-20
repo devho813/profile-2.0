@@ -2,10 +2,12 @@ import styled from 'styled-components';
 import { MainColor, inViewTransition } from '../../GlobalStyle';
 
 export const SectionWrapper = styled.section`
+  position: relative;
   width: 100%;
   text-align: center;
   padding: 120px 0;
   background: linear-gradient(to bottom, #3a3953, #1c1b35);
+  overflow: hidden;
 `;
 
 export const SectionTitle = styled.h1`

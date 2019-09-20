@@ -2,9 +2,11 @@ import styled from 'styled-components';
 import { MainColor, inViewTransition } from '../../GlobalStyle';
 
 export const SectionWrapper = styled.section`
+  position: relative;
   width: 100%;
   text-align: center;
-  padding: 90px 0;
+  padding: 90px 0 100px 0;
+  overflow: hidden;
 
   background: linear-gradient(to bottom, #4E4D67, #3a3953);
 `;

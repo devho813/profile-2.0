@@ -24,8 +24,8 @@ const Home = memo(() => {
   const setBackgroundMove = useCallback(
     throttle((e) => {
       homeWrapperRef.current.style.backgroundPosition = `
-        ${Math.ceil((window.innerWidth / 2 - e.clientX) * 0.15) * -1}px
-        ${Math.ceil((window.innerHeight / 2 - e.clientY) * 0.15) * -1}px
+        ${Math.ceil((window.innerWidth / 2 - e.clientX) * 0.18) * -1}px
+        ${Math.ceil((window.innerHeight / 2 - e.clientY) * 0.18) * -1}px
       `
     }, 100)
   , []);

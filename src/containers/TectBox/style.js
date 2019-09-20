@@ -26,11 +26,11 @@ export const TechBoxContainer = styled.div`
     switch(techId){
       case 1: return `position: absolute; left: 9.5%; bottom: 0;`;
       case 2: return `position: absolute; left: 25%; bottom: 0;`;
-      case 3: return `position: absolute; left: 42%; bottom: 0;`;
+      case 3: return `position: absolute; left: 41%; bottom: 0;`;
       case 4: return `position: absolute; left: 59.5%; bottom: 0;`;
       case 5: return `position: absolute; left: 75%; bottom: 0;`;
       case 6: return `position: absolute; left: 77.5%; bottom: 24.5%;`;
-      case 7: return `position: absolute; left: 73%; bottom: 49.5%;`;
+      case 7: return `position: absolute; left: 73%; bottom: 49%;`;
       case 8: return `position: absolute; left: 34.5%; bottom: 24.5%;`;
       case 9: return `position: absolute; left: 60.5%; bottom: 27.5%; transform: rotate(-28deg);`;
       case 10: return `position: absolute; left: 48%; bottom: 47%; transform: rotate(-14deg);`;
@@ -40,7 +40,7 @@ export const TechBoxContainer = styled.div`
 
 export const TechImage = styled.img`
   width: 100%;
-  box-shadow: 2px 2px 5px #222;
+  /* box-shadow: 2px 2px 5px #222; */
   border-radius: 10px;
   background-color: white;
   z-index: 3;

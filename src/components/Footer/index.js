@@ -27,7 +27,12 @@ const Footer = memo(() => {
   
   return (
     <FooterWrapper>
-      <BackToTop backToTopState={backToTopState} onClick={onClickBackToTop}/>
+      <BackToTop backToTopState={backToTopState} onClick={onClickBackToTop}>
+        <i>↑</i>
+        <span>t</span>
+        <span>o</span>
+        <span>p</span>
+      </BackToTop>
       <Copyright>© 2019. Chanho Lee. All Rights reserved.</Copyright>
     </FooterWrapper>
   )

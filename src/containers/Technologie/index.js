@@ -4,6 +4,7 @@ import { SectionWrapper, SectionTitle, DecoBar, SectionContent, TechBoxWrapper }
 import TechBox from '../TectBox';
 import { SECTION_POSITION_UPDATE } from '../../reducers/section';
 import { useInView } from 'react-intersection-observer'
+import Fish from '../../components/Fish';
 
 const Technologie = () => {
   const technologies = useSelector(store => store.me.technologies);
@@ -22,6 +23,7 @@ const Technologie = () => {
   
   return (
     <SectionWrapper ref={positionRef}>
+      <Fish fishId={3}/>
       <SectionTitle ref={sectionTitleRef} inView={sectionTitleInView}>
         Technologie
         <DecoBar></DecoBar>

@@ -17,7 +17,7 @@ export const HomeWrapper = styled.div`
   top: -10%;  
   color: white;
   background: rgba(0,0,0,0.4) url(${HomeBackgroundImage});
-  background-size: 120vw 110vh;
+  background-size: 100% 110vh;
   background-repeat: no-repeat;
   background-blend-mode: multiply;
 
@@ -39,7 +39,7 @@ export const HomeWrapper = styled.div`
   }
 
   @media (max-width: 1300px){
-    background-size: 120vw 90vh;
+    background-size: 100% 85vh;
   }
 `;
 
