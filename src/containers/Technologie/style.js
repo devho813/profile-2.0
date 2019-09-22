@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { MainColor, inViewTransition } from '../../GlobalStyle';
+import { MainColor, inViewTransition, media } from '../../GlobalStyle';
 
 export const SectionWrapper = styled.section`
   position: relative;
@@ -15,6 +15,10 @@ export const SectionTitle = styled.h1`
   color: white;
   font-size: 2.3rem;
   font-weight: 400;
+
+  ${media.tablet`
+    font-size: 2rem;
+  `}
 
   ${inViewTransition}
 `
@@ -45,4 +49,15 @@ export const TechBoxWrapper = styled.div`
   height: 25vw;
   max-height: 600px;
   margin: 0 auto;
+  z-index: 15;
+
+  ${media.tablet`
+    width: 55vw;
+    height: 33vw;  
+  `}
+  ${media.mobile`
+    width: 100vw;
+    height: 61vw;
+    left: 7vw;
+  `}
 `;

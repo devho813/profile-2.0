@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../GlobalStyle';
 
 export const LoadingContainer = styled.div`
   position: fixed;
@@ -57,6 +58,8 @@ export const FullNameLoading = styled.h1`
     animation: bounce .3s ease infinite alternate;
     font-family: 'Titan One', cursive;
     font-size: 4rem;
+    ${media.tablet`font-size: 3.5rem`};
+    ${media.mobile`font-size: 3rem`};
     color: #FFF;
     text-shadow: 0 1px 0 #CCC,
                 0 2px 0 #CCC,
@@ -99,6 +102,8 @@ export const FullNameLoading = styled.h1`
 export const ProgressBar = styled.h1`
   display: inline-block;
   width: 300px;
+  ${media.tablet`width:250px`};
+  ${media.mobile`width:230px`};
   height: 3px;
   margin-top: 35px;
   background-color: white;

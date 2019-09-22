@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../GlobalStyle';
 
 export const FishWrapper = styled.div`
   position: absolute;
@@ -19,6 +20,9 @@ export const FishWrapper = styled.div`
   & > img {
     position: absolute;
     width: 40px;
+    ${media.tablet`
+      width: 35px;
+    `}
     animation: bounce 2s infinite linear;
     filter: blur(1px);
 
@@ -47,6 +51,7 @@ export const FishWrapper2 = styled.div`
   position: absolute;
   right: 10vw;
   bottom: 40px;
+  z-index: 4;
 
   /* fish */
   & > img {
@@ -65,6 +70,13 @@ export const FishWrapper2 = styled.div`
         transform: translateY(-20px);
       }
     }
+
+    ${media.tablet`
+      width: 70px;
+    `}
+    ${media.mobile`
+      width: 55px;
+    `}
   }
   
   & > img:nth-child(1) { right: 0; bottom: 0; }
@@ -85,7 +97,7 @@ export const FishWrapper3 = styled.div`
       transform: translate(-110vw, 200px);
     }
     51%, 85%{
-      transform: scale(1, -1) rotate(180deg) translate(150vw, -200px);
+      transform: scale(1, -1) rotate(180deg) translate(180vw, -200px);
     }
     100%{
       transform: scale(1, -1) rotate(180deg) translate(0, 0);
@@ -109,6 +121,12 @@ export const FishWrapper3 = styled.div`
         transform: translateY(-30px);
       }
     }
+    ${media.tablet`
+      width: 350px;
+    `}
+    ${media.mobile`
+      width: 280px;
+    `}
   }
   
   & > img:nth-child(1) { right: 0; bottom: 0; }
@@ -132,10 +150,10 @@ export const FishWrapper4 = styled.div`
       transform: scale(1, -1) rotate(180deg) translate(-70vw, -30vh);
     }
     70%{
-      transform: scale(1, -1) rotate(180deg) translate(-15vw, -45vh);
+      transform: scale(1, -1) rotate(180deg) translate(-15vw, -38vh);
     }
     70.5%{
-      transform: translate(5vw, -45vh);
+      transform: translate(5vw, -38vh);
     }
     80%, 100%{
       transform: translate(100vw, -15vh);
@@ -158,6 +176,10 @@ export const FishWrapper4 = styled.div`
         transform: translateY(-10px);
       }
     }
+
+    ${media.tablet`
+      width: 100px;
+    `}
   }
   
   & > img:nth-child(1) { left: 0; bottom: 0; }
@@ -187,4 +209,9 @@ export const Light = styled.span`
       transform: translateY(-10px);
     }
   }
+
+  ${media.tablet`
+    left: 90px;
+    top: -54px;
+  `}
 `;

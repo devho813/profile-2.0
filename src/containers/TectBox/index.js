@@ -1,6 +1,6 @@
 import React, { memo, useState, useCallback } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import { TechBoxContainer, TechImage, TechContent, BackgroundBlack } from './style';
+import { TechBoxContainer, TechImage, TechContent, BackgroundBlack, TechContent2 } from './style';
 import { ACTIVE_TECHNOLOGIE_REQUEST, LEAVE_TECHNOLOGIE_REQUEST } from '../../reducers/me';
 import PropTypes from 'prop-types';
 import { useInView } from 'react-intersection-observer';
@@ -15,11 +15,11 @@ const TechBox = memo(({ techId, techName, description }) => {
   const onMouseEnterTechBox = useCallback(() => {
     setActiveState(true);
     dispatch({type: ACTIVE_TECHNOLOGIE_REQUEST});
-  }, [])
+  }, []);
   const onMouseLeaveTechBox = useCallback(() => {
     setActiveState(false);
     dispatch({type: LEAVE_TECHNOLOGIE_REQUEST});
-  }, [])
+  }, []);
 
   return (
     <>
@@ -28,7 +28,8 @@ const TechBox = memo(({ techId, techName, description }) => {
         allTechActiveState={allTechActiveState}
         techId={techId}
         onMouseEnter={onMouseEnterTechBox}
-        onMouseLeave={onMouseLeaveTechBox}>
+        onMouseLeave={onMouseLeaveTechBox}
+        onClick={onMouseEnterTechBox}>
           <TechImage 
             techId={techId}
             ref={techBoxRef} inView={techBoxInView}
@@ -44,7 +45,15 @@ const TechBox = memo(({ techId, techName, description }) => {
             </div>
           </TechContent>
       </TechBoxContainer>
-      <BackgroundBlack activeState={activeState}></BackgroundBlack>
+      <BackgroundBlack activeState={activeState} onClick={onMouseLeaveTechBox}>
+        {activeState && 
+          (<TechContent2>
+            {description.split('\n').map(line =>
+              line.length > 0 && (<span key={line}>{line}<br /></span>)
+            )}
+          </TechContent2>)
+        }
+      </BackgroundBlack>
     </>
   )
 });

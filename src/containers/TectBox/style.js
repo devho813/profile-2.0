@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../../GlobalStyle';
 
 export const BackgroundBlack = styled.div`
   position: fixed;
@@ -24,16 +25,16 @@ export const TechBoxContainer = styled.div`
 
   ${({techId}) => {
     switch(techId){
-      case 1: return `position: absolute; left: 9.5%; bottom: 0;`;
-      case 2: return `position: absolute; left: 25%; bottom: 0;`;
-      case 3: return `position: absolute; left: 41%; bottom: 0;`;
-      case 4: return `position: absolute; left: 59.5%; bottom: 0;`;
-      case 5: return `position: absolute; left: 75%; bottom: 0;`;
-      case 6: return `position: absolute; left: 77.5%; bottom: 24.5%;`;
-      case 7: return `position: absolute; left: 73%; bottom: 49%;`;
-      case 8: return `position: absolute; left: 34.5%; bottom: 24.5%;`;
-      case 9: return `position: absolute; left: 60.5%; bottom: 27.5%; transform: rotate(-28deg);`;
-      case 10: return `position: absolute; left: 48%; bottom: 47%; transform: rotate(-14deg);`;
+      case 1: return `position: absolute; left: 2.5%; bottom: 0;`;
+      case 2: return `position: absolute; left: 19%; bottom: 0;`;
+      case 3: return `position: absolute; left: 35%; bottom: 0;`;
+      case 4: return `position: absolute; left: 53.5%; bottom: 0;`;
+      case 5: return `position: absolute; left: 69%; bottom: 0;`;
+      case 6: return `position: absolute; left: 71.5%; bottom: 24.5%;`;
+      case 7: return `position: absolute; left: 67%; bottom: 49%;`;
+      case 8: return `position: absolute; left: 28.5%; bottom: 24.5%;`;
+      case 9: return `position: absolute; left: 54.5%; bottom: 27.5%; transform: rotate(-28deg);`;
+      case 10: return `position: absolute; left: 42%; bottom: 47%; transform: rotate(-14deg);`;
     }
   }}
 `;
@@ -58,6 +59,10 @@ export const TechContent = styled.div`
   left: 0;
   top: 0;
   z-index: 5;
+
+  ${media.mobile`
+    display: none;
+  `};
   
   .hint-content {
     color: #fff;
@@ -76,6 +81,13 @@ export const TechContent = styled.div`
     visibility: hidden;
     pointer-events: none;
     text-align: left;
+
+    ${media.tablet`
+      width: 220px;
+      font-size: 0.8rem;
+      line-height: 1.2rem;
+      bottom: calc(100% + 20px);
+    `};
   }
   &:hover .hint-content {
     opacity: 1;
@@ -113,3 +125,21 @@ export const TechContent = styled.div`
     visibility: visible;
   }
 `;
+
+export const TechContent2 = styled.p`
+  display: none;
+
+  ${media.mobile`
+    display: block;
+    color: white;
+    position: absolute;
+    width: 90%;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -20%);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    text-align: left;
+  `}
+`

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import HomeBackgroundImage from "../../assets/images/home_background.png";
-import { MainColor } from '../../GlobalStyle';
+import { MainColor, media } from '../../GlobalStyle';
 
 export const HomeContainer = styled.header`
   width: 100%;
@@ -50,7 +50,6 @@ export const SubWrapper = styled.div`
   transform: translateY(-38%);
   text-align: center;
   z-index: 9;
-
   font-family: 'Stay Writer', sans-serif;
 `
 
@@ -58,6 +57,14 @@ export const Name = styled.h1`
   margin: 0;
   font-weight: 100;
   font-size: 4rem;
+
+  ${media.tablet`
+    font-size: 3rem;
+  `}
+
+  ${media.mobile`
+    font-size: 2.5rem;
+  `}
 
   strong{
     font-weight: 900;
@@ -79,6 +86,19 @@ export const JobNameWrapper = styled.h2`
   font-weight: 100;
   font-size: 2.5rem;
   color: ${MainColor};
+
+  ${media.tablet`
+    font-size: 2rem;
+  `}
+
+  ${media.mobile`
+    margin-top: 20px;
+    font-size: 1.6rem;
+
+      & > span{
+      display: block;
+    }
+  `}
   
   span.ampersand{
     display: inline-block;
@@ -92,13 +112,15 @@ export const BaseIn = styled.h3`
   font-weight: 100;
   font-size: 1.8rem;
 
-  span.detail-address {
-    cursor: pointer;
-    border-bottom: 1px dashed ${MainColor};
+  ${media.tablet`
+    font-size: 1.5rem;
+  `}
+  ${media.mobile`
+    font-size: 1.1rem;
+  `}
 
-    :hover{
-      color: ${MainColor};
-    }
+  span.detail-address {
+    border-bottom: 1px dashed ${MainColor};
   }
 `;
 

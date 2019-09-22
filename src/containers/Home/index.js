@@ -15,7 +15,7 @@ const Home = memo(() => {
     return jobNames.map((job, index) => {
       return (
         <span key={job}>
-          {job}{jobNames.length - 1 !== index && <span className="ampersand">&</span>}
+          {index > 0 && <span className="ampersand">&</span>}{job}
         </span>
       )
     })

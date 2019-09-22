@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { MainColor } from '../../GlobalStyle';
+import { MainColor, media } from '../../GlobalStyle';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const PopupClose = styled(FontAwesomeIcon)`
@@ -20,6 +20,7 @@ export const ProjectImage = styled.img`
   transition: top .5s ease-in .1s, opacity 1s .2s, transform 1s .2s;
   opacity: ${({inView}) => inView ? 1 : 0};
   transform: ${({inView}) => inView ? `translateY(0)`:`translateY(10vh)`};
+  border-radius: 5px;
 `;
 
 export const ProjectLabel = styled.div`
@@ -66,6 +67,15 @@ export const ProjectWrapper = styled.article`
   width: 25%;
   margin: 2% 3%;
   cursor: pointer;
+
+  ${media.tablet`
+    width: 43%;
+  `}
+
+  ${media.mobile`
+    width: 90%;
+    margin: 5% 3%;
+  `}
   
   &:hover ${ProjectLabel}{
     bottom: 0px;

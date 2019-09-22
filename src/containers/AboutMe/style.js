@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { MainColor, inViewTransition } from '../../GlobalStyle';
+import { MainColor, inViewTransition, media } from '../../GlobalStyle';
 
 export const SectionWrapper = styled.section`
   position: relative;
   width: 100%;
   text-align: center;
-  padding: 90px 0 100px 0;
+  padding: 90px 0 120px 0;
   overflow: hidden;
 
   background: linear-gradient(to bottom, #4E4D67, #3a3953);
@@ -16,6 +16,10 @@ export const SectionTitle = styled.h1`
   color: white;
   font-size: 2.3rem;
   font-weight: 400;
+
+  ${media.tablet`
+    font-size: 2rem;
+  `}
 
   ${inViewTransition};
 `
@@ -29,6 +33,7 @@ export const DecoBar = styled.span`
 `;
 
 export const SectionContent = styled.article`
+  position: relative;
   font-size: 1.2rem;
   line-height: 1.7rem;
   letter-spacing: .5px;
@@ -36,21 +41,39 @@ export const SectionContent = styled.article`
   font-style: normal;
   color: white;
   margin-top: 40px;
+  z-index: 5;
+
+  ${media.tablet`
+    font-size: 1rem;
+    line-height: 1.5rem;
+  `}
+  ${media.mobile`
+    width: 90%;
+    margin: 0 auto;
+  `}
 
   ${inViewTransition};
 `;
 
 export const ContactInfoTitle = styled.h2`
+  position: relative;
   margin-top: 50px;
   font-size: 1.5rem;
   font-weight: 400;
   color: white;
+  z-index: 5;
+
+  ${media.tablet`
+    font-size: 1.3rem;
+  `}
 
   ${inViewTransition};
 `;
 
 export const ContactInfoList = styled.ul`
+  position: relative;
   margin-top: 30px;
+  z-index: 5;
 
   ${inViewTransition};
 
@@ -63,6 +86,11 @@ export const ContactInfoList = styled.ul`
     height: 60px;
     line-height: 70px;
     cursor: pointer;
+
+    ${media.tablet`
+      width: 50px;
+      height: 50px;
+    `}
 
     img {
       width: 70%;
@@ -104,6 +132,12 @@ export const ContactInfoPopup = styled.div`
     }
   }
 
+  ${media.tablet`
+    width: 180px;
+    height: 25px;
+    line-height: 25px;
+  `}
+
   &:before {
     content: '';
     position: absolute;
@@ -125,6 +159,10 @@ export const ContactInfoPopup = styled.div`
     font-weight: 400;
     color: white;
     cursor: text;
+
+    ${media.tablet`
+      font-size: 1rem;
+    `};
 
     a{
       text-decoration: none;

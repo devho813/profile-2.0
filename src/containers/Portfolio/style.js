@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { MainColor, inViewTransition } from '../../GlobalStyle';
+import { MainColor, inViewTransition, media } from '../../GlobalStyle';
 export const SectionWrapper = styled.section`
   position: relative;
   width: 97%;
@@ -8,6 +8,7 @@ export const SectionWrapper = styled.section`
   background-color: white;
   padding-left: 3%;
   overflow: hidden;
+  z-index: 30;
 
   background: linear-gradient(to bottom, #1c1b35, #222);
 `;
@@ -17,6 +18,10 @@ export const SectionTitle = styled.h1`
   color: white;
   font-size: 2.3rem;
   font-weight: 400;
+  
+  ${media.tablet`
+    font-size: 2rem;
+  `}
   
   ${inViewTransition};
 `

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {MainColor} from '../../GlobalStyle';
+import {MainColor, media} from '../../GlobalStyle';
 
 export const NavigationWrapper = styled.nav`
   position: fixed;
@@ -25,6 +25,12 @@ export const NavigationIcon = styled.div`
   transition-property: background-color;
   cursor: pointer;
   visibility: visible;
+  z-index: 1000;
+
+  ${media.tablet`
+    width: 50px;
+    height: 50px;
+  `}
 
   &:hover{
     background-color: ${MainColor};
@@ -66,33 +72,55 @@ export const NavigationIcon = styled.div`
   }
 `;
 
-
 export const NavigationContent = styled.div`
   position: absolute;
   left: 70%;
   top: 50%;
   width: 90%;
   transform: translate(-70%, -50%);
+  ${media.tablet`
+    top: 40%;
+    transform: translate(-70%, -40%);
+  `}
+  ${media.mobile`
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+  `}
 `;
 
 export const SectionList = styled.ul`
   position: relative;
   float: right;
   width: 20%;
+  ${media.tablet`width: 25%;`}
   left: ${({extend}) => extend ? `0` : `70px`};
   opacity: ${({extend}) => extend ? 1 : 0};
   transition: ${({extend}) => extend ? `all .6s .4s` : `all .6s .3s`};
   transition-property: left, opacity;
 
+  ${media.mobile`
+    width: 100%;
+    float: none;
+    margin-top: 150px;
+  `}
+
   li {
     margin: 50px 0;
     color: white;
     font-size: 2rem;
+    ${media.tablet`font-size: 1.8rem`};
     font-weight: 200;
     text-align: left;
     cursor: pointer;
-
     transition: color .6s;
+
+    ${media.mobile`
+      text-align: center;
+      margin: 40px 0;
+    `}
 
     &:hover {
       color: ${MainColor};

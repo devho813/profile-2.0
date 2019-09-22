@@ -58,7 +58,7 @@ const initialStore = {
       position: '프론트 개발 + 디자인',
       siteLink: 'https://devho813.github.io/profile/',
       githubLink: 'https://github.com/devho813/profile',
-      technologies: ['HTML5', 'CSS3', 'Javscript', 'vue.js'],
+      technologies: ['HTML5', 'CSS3', 'Javscript', 'vue.js', 'Github Page'],
       imagePaths: [
         require('../assets/images/project/profile/project_profile_1.png'),
         require('../assets/images/project/profile/project_profile_2.png'),
@@ -75,9 +75,13 @@ const initialStore = {
       position: '프론트 개발 + 디자인',
       siteLink: 'https://chanho.me',
       githubLink: 'https://github.com/devho813/profile-2.0',
-      technologies: ['HTML5', 'CSS3', 'Javscript', 'React', 'Redux', 'Redux-Saga', 'immer', 'styled-components'],
+      technologies: ['HTML5', 'CSS3', 'Javscript', 'React', 'Redux', 'Redux-Saga', 'immer', 'styled-components', 'Github Page'],
       imagePaths: [
-        require('../assets/images/project/profile/project_profile_1.png'),
+        require('../assets/images/project/profile2/project_profile2_1.png'),
+        require('../assets/images/project/profile2/project_profile2_2.png'),
+        require('../assets/images/project/profile2/project_profile2_3.png'),
+        require('../assets/images/project/profile2/project_profile2_4.png'),
+        require('../assets/images/project/profile2/project_profile2_5.png'),
       ]
     },
   ]

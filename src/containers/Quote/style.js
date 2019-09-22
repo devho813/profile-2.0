@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { MainColor } from '../../GlobalStyle';
+import { MainColor, media } from '../../GlobalStyle';
 
 export const QuoteWrapper = styled.div`
   position: relative;
@@ -14,6 +14,14 @@ export const QuoteWrapper = styled.div`
   opacity: ${({ extend }) => extend ? 1 : 0};
   transition: ${({ extend }) => extend ? `all .6s .8s` : `all .6s`};
   transition-property: left, top, opacity;
+
+  ${media.tablet`width: 65%;`}
+  ${media.mobile`
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    margin-top: 50px;
+  `}
 `;
 
 export const QuoteTitle = styled.h3`
@@ -23,6 +31,12 @@ export const QuoteTitle = styled.h3`
   color: white;
   opacity: 0.2;
   margin: 0 0 2.5rem 0;
+
+  ${media.tablet`font-size: 1.7rem;`}
+  ${media.mobile`
+    padding: 0;
+    margin-bottom: 1.5rem;
+  `}
 `;
 
 export const QuoteContent = styled.span`
@@ -32,6 +46,12 @@ export const QuoteContent = styled.span`
   font-weight: 100;
   color: white;
   font-style: italic;
+
+  ${media.tablet`font-size: 1.5rem;`}
+  ${media.mobile`
+    max-width: 80%;
+    font-size: 1.3rem;
+  `}
 `;
 
 export const QuoteMarkLeft = styled(FontAwesomeIcon)`
@@ -39,6 +59,12 @@ export const QuoteMarkLeft = styled(FontAwesomeIcon)`
   top: -1.6rem;
   left: -1.6rem;
   font-size: 1.6rem;
+  ${media.tablet`font-size: 1.4rem;`}
+  ${media.mobile`
+    font-size: 1.2rem;
+    top: -1.2rem;
+    left: -1.2rem;
+  `}
   color: ${MainColor};
 `;
 
@@ -47,6 +73,12 @@ export const QuoteMarkRight = styled(FontAwesomeIcon)`
   top: -1.6rem;
   right: -1.6rem;
   font-size: 1.6rem;
+  ${media.tablet`font-size: 1.4rem;`}
+  ${media.mobile`
+    font-size: 1.2rem;
+    top: -1.2rem;
+    right: -1.2rem;
+  `}
   color: ${MainColor};
 `;
 
@@ -54,6 +86,7 @@ export const Author = styled.span`
   display: block;
   opacity: .5;
   font-size: 1.2rem;
+  ${media.tablet`font-size: 1rem;`}
   padding-right: 10px;
   letter-spacing: 1.1px;
   font-weight: normal;
