@@ -4,11 +4,10 @@ export const SectionWrapper = styled.section`
   position: relative;
   width: 97%;
   text-align: center;
-  padding: 90px 0;
+  padding: 90px 0 100px 0;
   background-color: white;
   padding-left: 3%;
   overflow: hidden;
-  z-index: 30;
 
   background: linear-gradient(to bottom, #1c1b35, #222);
 `;

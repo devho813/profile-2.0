@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { media } from '../../GlobalStyle';
-import { faTable } from '@fortawesome/free-solid-svg-icons';
 
 export const FooterWrapper = styled.footer`
   width: 100%;
@@ -24,7 +23,7 @@ export const BackToTop = styled.div`
   };
   color: white;
   font-size: 1.2rem;
-  z-index: 99;
+  z-index: 9;
 
   ${media.mobile`
     right: -10px;

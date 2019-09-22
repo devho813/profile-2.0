@@ -49,7 +49,7 @@ export const TechBoxWrapper = styled.div`
   height: 25vw;
   max-height: 600px;
   margin: 0 auto;
-  z-index: 15;
+  z-index: 10;
 
   ${media.tablet`
     width: 55vw;
