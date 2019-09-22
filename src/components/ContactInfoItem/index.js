@@ -38,7 +38,7 @@ const ContactInfoItem = memo(({ type, value }) => {
   return (
     <li onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <img src={imageURL} alt={type}/>
-      <ContactInfoPopup showPopup={showPopup}>
+      <ContactInfoPopup showPopup={showPopup} type={type}>
         <span>
           {type !== 'github' ? value : <a target="_blank" href={value}>{value}</a>}
         </span>

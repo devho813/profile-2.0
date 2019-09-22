@@ -4,6 +4,8 @@ import { TechBoxContainer, TechImage, TechContent, BackgroundBlack, TechContent2
 import { ACTIVE_TECHNOLOGIE_REQUEST, LEAVE_TECHNOLOGIE_REQUEST } from '../../reducers/me';
 import PropTypes from 'prop-types';
 import { useInView } from 'react-intersection-observer';
+import { PopupClose } from '../../components/Project/style';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const TechBox = memo(({ techId, techName, description }) => {
   const [activeState, setActiveState] = useState(null); // 해당 technologie 활성 상태
@@ -12,11 +14,11 @@ const TechBox = memo(({ techId, techName, description }) => {
 
   const [techBoxRef, techBoxInView] = useInView({threshold: 1, triggerOnce: true});
   
-  const onMouseEnterTechBox = useCallback(() => {
+  const onShowTechContent = useCallback(() => {
     setActiveState(true);
     dispatch({type: ACTIVE_TECHNOLOGIE_REQUEST});
   }, []);
-  const onMouseLeaveTechBox = useCallback(() => {
+  const onHideTechContent = useCallback(() => {
     setActiveState(false);
     dispatch({type: LEAVE_TECHNOLOGIE_REQUEST});
   }, []);
@@ -27,9 +29,9 @@ const TechBox = memo(({ techId, techName, description }) => {
         activeState={activeState}
         allTechActiveState={allTechActiveState}
         techId={techId}
-        onMouseEnter={onMouseEnterTechBox}
-        onMouseLeave={onMouseLeaveTechBox}
-        onClick={onMouseEnterTechBox}>
+        onMouseEnter={onShowTechContent}
+        onMouseLeave={onHideTechContent}
+        onClick={onShowTechContent}>
           <TechImage 
             techId={techId}
             ref={techBoxRef} inView={techBoxInView}
@@ -45,12 +47,13 @@ const TechBox = memo(({ techId, techName, description }) => {
             </div>
           </TechContent>
       </TechBoxContainer>
-      <BackgroundBlack activeState={activeState} onClick={onMouseLeaveTechBox}>
+      <BackgroundBlack activeState={activeState} onTouchStart={onHideTechContent}>
         {activeState && 
           (<TechContent2>
             {description.split('\n').map(line =>
               line.length > 0 && (<span key={line}>{line}<br /></span>)
             )}
+            <PopupClose icon={faTimes} onClick={onHideTechContent}/>
           </TechContent2>)
         }
       </BackgroundBlack>

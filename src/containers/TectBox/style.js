@@ -13,6 +13,11 @@ export const BackgroundBlack = styled.div`
   transition-property: opacity, visibility;
   opacity: ${({activeState}) => activeState ? 1 : 0};
   visibility: ${({activeState}) => activeState ? `visible;` : 'hidden;'};
+
+
+  ${media.mobile`
+    z-index: 10;
+  `}
 `;
 
 export const TechBoxContainer = styled.div`
@@ -135,8 +140,8 @@ export const TechContent2 = styled.p`
     position: absolute;
     width: 90%;
     left: 50%;
-    top: 20%;
-    transform: translate(-50%, -20%);
+    top: 40%;
+    transform: translate(-50%, -40%);
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 0.9rem;
     line-height: 1.2rem;

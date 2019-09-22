@@ -29,7 +29,7 @@ const Project = memo(({project}) => {
     <ProjectWrapper onClick={onClickProject}>
       <ProjectImage 
         ref={projectRef} inView={projectInView}
-        src={imagePaths[0]}/>
+        src={imagePaths[0]} popupState={popupState}/>
       <ProjectLabel>
         <h4>{title}<span>({year})</span></h4>
         <ProjectEnv>{environment}</ProjectEnv>

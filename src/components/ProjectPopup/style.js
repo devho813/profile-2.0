@@ -160,7 +160,6 @@ export const DetailLeft = styled.div`
     float: none;
     width: 90%;
     margin: 0 auto;
-    margin-top: 20px;
   `}
 `;
 

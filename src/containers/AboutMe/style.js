@@ -91,6 +91,11 @@ export const ContactInfoList = styled.ul`
       width: 50px;
       height: 50px;
     `}
+    
+    ${media.mobile`
+      margin: 0 10px;
+      line-height: 50px;
+    `}
 
     img {
       width: 70%;
@@ -138,11 +143,15 @@ export const ContactInfoPopup = styled.div`
     line-height: 25px;
   `}
 
+  ${({type}) => type === 'kakaoTalk' && media.mobile`
+    width: 100px;
+  `}
+
   &:before {
     content: '';
     position: absolute;
     left: 23px;
-    top: -10px;
+    top: -8px;
     border-width: 10px 8px 0 8px;
     border-style: solid;
     border-color: ${MainColor} transparent transparent transparent;
