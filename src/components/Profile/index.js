@@ -24,7 +24,9 @@ const Profile = memo(() => {
   
   return (
     <>
-      {showLoadingPage && <LoadingPage LoadingDuration={LoadingDuration.current}/>}
+      {showLoadingPage && 
+        <LoadingPage LoadingDuration={LoadingDuration.current}/>
+      }
       {!showLoadingPage && 
         <>
           <GlobalNavigation />

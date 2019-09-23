@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export const PopupClose = styled(FontAwesomeIcon)`
   position: absolute;
   right: 0;
-  top: -70px;
+  top: -65px;
   padding: 15px;
   width: 30px !important;
   height: 30px !important;

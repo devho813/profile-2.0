@@ -7,7 +7,7 @@ export const BackgroundBlack = styled.div`
   height: 100vh;
   left: 0;
   top: 0;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
   transition: ${({activeState}) => activeState ? `all .6s ease-out`: `all .4s ease-in .6s;`};
   transition-property: opacity, visibility;

@@ -104,7 +104,7 @@ export const SectionList = styled.ul`
   ${media.mobile`
     width: 100%;
     float: none;
-    margin-top: 150px;
+    margin-top: 120px;
   `}
 
   li {

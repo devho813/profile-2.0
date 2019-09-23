@@ -1,5 +1,6 @@
 import React, {memo} from 'react'
 import { LoadingContainer, LoadingWrapper, FullNameLoading, ProgressBar } from './style';
+import UserAgent from '../../containers/UserAgent';
 
 const LoadingPage = memo(({LoadingDuration}) => {
   return (
@@ -21,6 +22,7 @@ const LoadingPage = memo(({LoadingDuration}) => {
           </ProgressBar>
         </div>
       </LoadingWrapper>
+      <UserAgent />
     </LoadingContainer>
   )
 });

@@ -41,6 +41,10 @@ export const HomeWrapper = styled.div`
   @media (max-width: 1300px){
     background-size: 100% 85vh;
   }
+
+  ${media.mobile`
+    background-size: 100% 50vh;
+  `}
 `;
 
 export const SubWrapper = styled.div`
@@ -51,6 +55,11 @@ export const SubWrapper = styled.div`
   text-align: center;
   z-index: 9;
   font-family: 'Stay Writer', sans-serif;
+
+  ${media.mobile`
+    top: 55%;
+    transform: translateY(-55%);
+  `}
 `
 
 export const Name = styled.h1`
