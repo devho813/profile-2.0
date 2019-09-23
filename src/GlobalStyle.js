@@ -19,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Stay Writer', 'SSShinb7', 'Noto Sans KR', sans-serif;
     font-size: 16px;
     box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   ul{

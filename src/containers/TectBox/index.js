@@ -47,7 +47,7 @@ const TechBox = memo(({ techId, techName, description }) => {
             </div>
           </TechContent>
       </TechBoxContainer>
-      <BackgroundBlack activeState={activeState} onTouchStart={onHideTechContent}>
+      <BackgroundBlack activeState={activeState}>
         {activeState && 
           (<TechContent2>
             {description.split('\n').map(line =>

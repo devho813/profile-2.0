@@ -51,7 +51,6 @@ export const FishWrapper2 = styled.div`
   position: absolute;
   right: 10vw;
   bottom: 40px;
-  z-index: 4;
 
   /* fish */
   & > img {
@@ -136,7 +135,6 @@ export const FishWrapper4 = styled.div`
   position: absolute;
   left: 0;
   bottom: 0;
-  z-index: 1;
 
   animation: swim4 15s infinite linear;
   @keyframes swim4 {

@@ -93,7 +93,7 @@ export const ImageWrapper = styled.div`
 
 export const DetailRight = styled.ul`
   float: left;
-  width: 36%;
+  width: 39%;
   color: rgba(255, 255, 255, 0.6);
   text-align: left;
   padding: 0 2%;
@@ -154,7 +154,7 @@ export const HashSymbol = styled.i`
 
 export const DetailLeft = styled.div`
   float: left;
-  width: 60%;
+  width: 57%;
 
   ${media.mobile`
     float: none;
@@ -168,7 +168,7 @@ export const DetailWrapper = styled.div`
   left: 50%;
   top: 45%;
   transform: translate(-50%, -45%);
-  width: 65%;
+  width: 75%;
 
   ${media.tablet`
     width: 95%;
@@ -181,7 +181,7 @@ export const ProjectDetail = styled.div`
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.85);
   z-index: 100;
   opacity: 0;
   cursor: auto;

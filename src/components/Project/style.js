@@ -21,6 +21,7 @@ export const ProjectImage = styled.img`
   opacity: ${({inView}) => inView ? 1 : 0};
   transform: ${({inView}) => inView ? `translateY(0)`:`translateY(10vh)`};
   border-radius: 5px;
+  z-index: 1;
 
   /* 모바일, 태블릿 환경에서 left arrow, right arrow 클릭 시 깜빡임 현상 때문에 display 임시 none 처리 */
   ${({popupState}) => popupState && `display: none;`}

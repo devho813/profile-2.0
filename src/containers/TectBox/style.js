@@ -8,22 +8,21 @@ export const BackgroundBlack = styled.div`
   left: 0;
   top: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1;
+  z-index: 11;
   transition: ${({activeState}) => activeState ? `all .6s ease-out`: `all .4s ease-in .6s;`};
   transition-property: opacity, visibility;
   opacity: ${({activeState}) => activeState ? 1 : 0};
   visibility: ${({activeState}) => activeState ? `visible;` : 'hidden;'};
-
-
+  
   ${media.mobile`
-    z-index: 10;
+    z-index: 12;
   `}
 `;
 
 export const TechBoxContainer = styled.div`
   width: 15%;
   cursor: pointer;
-  z-index: 3;
+  z-index: 12;
   opacity: ${({activeState}) => activeState ? 1 : 0.15};
   opacity: ${({allTechActiveState}) => !allTechActiveState && 1};
   transition: opacity .8s;
@@ -49,7 +48,6 @@ export const TechImage = styled.img`
   /* box-shadow: 2px 2px 5px #222; */
   border-radius: 10px;
   background-color: white;
-  z-index: 3;
 
   transition: ${({techId}) => `all 1s .${techId}s`};
   transition-property: opacity, transform;

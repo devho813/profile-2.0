@@ -7,8 +7,6 @@ export const LoadingContainer = styled.div`
   top: 0;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
-  z-index: 1000;
   background-color: #8280AB;
 `;
 

@@ -6,7 +6,6 @@ export const SectionWrapper = styled.section`
   width: 100%;
   text-align: center;
   padding: 90px 0 120px 0;
-  overflow: hidden;
 
   background: linear-gradient(to bottom, #4E4D67, #3a3953);
 `;
@@ -41,7 +40,6 @@ export const SectionContent = styled.article`
   font-style: normal;
   color: white;
   margin-top: 40px;
-  z-index: 5;
 
   ${media.tablet`
     font-size: 1rem;
@@ -61,7 +59,6 @@ export const ContactInfoTitle = styled.h2`
   font-size: 1.5rem;
   font-weight: 400;
   color: white;
-  z-index: 5;
 
   ${media.tablet`
     font-size: 1.3rem;
@@ -73,7 +70,7 @@ export const ContactInfoTitle = styled.h2`
 export const ContactInfoList = styled.ul`
   position: relative;
   margin-top: 30px;
-  z-index: 5;
+  z-index: 1;
 
   ${inViewTransition};
 

@@ -5,7 +5,6 @@ import { MainColor, media } from '../../GlobalStyle';
 export const HomeContainer = styled.header`
   width: 100%;
   height: 100vh;
-  overflow: hidden;
   background-color: #8280AB;
 `;
 
@@ -53,7 +52,6 @@ export const SubWrapper = styled.div`
   top: 38%;
   transform: translateY(-38%);
   text-align: center;
-  z-index: 9;
   font-family: 'Stay Writer', sans-serif;
 
   ${media.mobile`
