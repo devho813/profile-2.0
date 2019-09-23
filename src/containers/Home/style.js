@@ -21,7 +21,7 @@ export const HomeWrapper = styled.div`
   background-blend-mode: multiply;
 
   transition: background-position 1s ease-out;
-  animation: HomeShowAnim 2s ease forwards;
+  animation: ${({LoadingDuration}) => `HomeShowAnim 2s ${LoadingDuration+2}s ease forwards`};
 
   @keyframes HomeShowAnim {
     0%{

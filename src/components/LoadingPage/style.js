@@ -8,6 +8,7 @@ export const LoadingContainer = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: #8280AB;
+  z-index: 1000;
 `;
 
 export const LoadingWrapper = styled.div`
@@ -15,9 +16,7 @@ export const LoadingWrapper = styled.div`
   height: 100%;
   background-color: #8F7C89;
   
-  animation: ${({LoadingDuration}) => 
-    `LoadingWrapperHideAnim 2s ease ${LoadingDuration}s forwards`
-  };
+  animation: ${({ LoadingDuration }) => `LoadingWrapperHideAnim 2s ease ${LoadingDuration}s forwards`};
 
   @keyframes LoadingWrapperHideAnim {
     0%{
@@ -110,9 +109,9 @@ export const ProgressBar = styled.h1`
     width: 0px;
     height: 100%;
     background-color: #222;
-    animation: ${({LoadingDuration}) => 
-      `progressBarStateAnim ${LoadingDuration}s ease-in forwards`
-    };
+    animation: ${({ LoadingDuration }) =>
+    `progressBarStateAnim ${LoadingDuration}s ease-in forwards`
+  };
     
     @keyframes progressBarStateAnim {
       to {

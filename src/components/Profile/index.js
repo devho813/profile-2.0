@@ -15,6 +15,7 @@ const Profile = memo(() => {
   useEffect(() => {
     timer.current = setTimeout(() => {
       setShowLoadingPage(false);
+      window.scrollTo(0, 0);
     }, LoadingDuration.current * 1000 + 2000)
 
     return () => {
@@ -24,19 +25,18 @@ const Profile = memo(() => {
   
   return (
     <>
-      {showLoadingPage && 
-        <LoadingPage LoadingDuration={LoadingDuration.current}/>
-      }
-      {!showLoadingPage && 
+      {/* Home 컴포넌트 배경이미지 로딩 지연으로 인한 loading 페이지 생성 */}
+      {showLoadingPage && <LoadingPage LoadingDuration={LoadingDuration.current}/>}
+      <GlobalNavigation />
+      <Home LoadingDuration={LoadingDuration.current}/>
+      {!showLoadingPage && (
         <>
-          <GlobalNavigation />
-          <Home />
           <AboutMe />
           <Technologie/>
           <Portfolio />
-          <Footer />
+          <Footer /> 
         </>
-      }
+      )}
     </>
   )
 });
