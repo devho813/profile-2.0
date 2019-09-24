@@ -6,6 +6,7 @@ export const HomeContainer = styled.header`
   width: 100%;
   height: 100vh;
   background-color: #8280AB;
+  overflow: hidden;
 `;
 
 export const HomeWrapper = styled.div`
@@ -19,10 +20,25 @@ export const HomeWrapper = styled.div`
   background-size: 100% 110vh;
   background-repeat: no-repeat;
   background-blend-mode: multiply;
+  
+  /* IE 10 and 11 */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    background: url(${HomeBackgroundImage});
+    background-size: 100% 110vh;
+    background-repeat: no-repeat;
+
+    &::before{
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: rgba(0,0,0,0.4);
+    }
+  }
 
   transition: background-position 1s ease-out;
-  animation: ${({LoadingDuration}) => `HomeShowAnim 2s ${LoadingDuration+2}s ease forwards`};
 
+  animation: ${({LoadingDuration}) => `HomeShowAnim 2s ${LoadingDuration+2}s ease forwards`};
   @keyframes HomeShowAnim {
     0%{
       transform: translateY(100vh);
@@ -34,6 +50,23 @@ export const HomeWrapper = styled.div`
     }
     100%{
       transform: translateY(0vh) scale(1);
+    }
+  }
+
+  @media not all and (min-resolution:.001dpcm) { 
+    animation: ${({LoadingDuration}) => `HomeShowSafariAnim 2s ${LoadingDuration+2}s ease forwards`};
+  }
+  @keyframes HomeShowSafariAnim {
+    0%{
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+    65%{
+      transform: translateY(-15vh);
+      opacity: 1;
+    }
+    100%{
+      transform: translateY(0vh);
     }
   }
 

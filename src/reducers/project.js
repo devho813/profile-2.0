@@ -42,7 +42,7 @@ const initialStore = {
       position: '풀스택 개발 + 디자인',
       siteLink: 'https://www.youtube.com/watch?v=X_-5RJrhcNQ',
       githubLink: 'https://github.com/devho813/vector-board',
-      technologies: ['HTML5', 'SVG', 'CSS3', 'Javscript', 'jQuery', 'node.js', 'socket.io', 'mysql'],
+      technologies: ['졸업작품', 'HTML5', 'SVG', 'CSS3', 'Javscript', 'jQuery', 'node.js', 'socket.io', 'mysql'],
       imagePaths: [
         require('../assets/images/project/vectorboard/project_vectorboard_1.png'),
         require('../assets/images/project/vectorboard/project_vectorboard_2.png'),

@@ -6,6 +6,7 @@ export const SectionWrapper = styled.section`
   width: 100%;
   text-align: center;
   padding: 120px 0;
+  overflow-x: hidden;
   background: linear-gradient(to bottom, #3a3953, #1c1b35);
 `;
 
@@ -38,7 +39,7 @@ export const SectionContent = styled.article`
   letter-spacing: .5px;
   font-weight: 300;
   font-style: normal;
-  margin-top: 50px;
+  margin-top: 30px;
 `;
 
 export const TechBoxWrapper = styled.div`

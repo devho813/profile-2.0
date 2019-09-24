@@ -6,6 +6,7 @@ export const SectionWrapper = styled.section`
   width: 100%;
   text-align: center;
   padding: 90px 0 120px 0;
+  overflow: hidden;
 
   background: linear-gradient(to bottom, #4E4D67, #3a3953);
 `;

@@ -7,7 +7,7 @@ const UserAgentWrapper = styled.div`
   right: 3px;
   color: white;
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 `
 
 const SupportCircle = styled.span`

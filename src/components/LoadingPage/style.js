@@ -17,7 +17,6 @@ export const LoadingWrapper = styled.div`
   background-color: #8F7C89;
   
   animation: ${({ LoadingDuration }) => `LoadingWrapperHideAnim 2s ease ${LoadingDuration}s forwards`};
-
   @keyframes LoadingWrapperHideAnim {
     0%{
       transform: translateY(0vh) scale(1);
@@ -31,6 +30,23 @@ export const LoadingWrapper = styled.div`
       opacity: 0;
     }
   }
+
+  @media not all and (min-resolution:.001dpcm) { 
+    animation: ${({ LoadingDuration }) => `LoadingWrapperHideSafariAnim 2s ease ${LoadingDuration}s forwards`}; 
+  }
+  @keyframes LoadingWrapperHideSafariAnim {
+      0%{
+        transform: translateY(0vh);
+      }
+      35%{
+        transform: translateY(-15vh);
+        opacity: 1;
+      }
+      100%{
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
 
   & > div.loading-wrapper{
     width: 100%;

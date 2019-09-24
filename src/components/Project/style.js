@@ -38,6 +38,7 @@ export const ProjectLabel = styled.div`
   opacity: 0;
   transition: all .8s;
   transition-property: opacity, bottom;
+  z-index: 1;
 
   h4{
     /* title */

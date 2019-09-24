@@ -35,8 +35,8 @@ export const TechBoxContainer = styled.div`
       case 4: return `position: absolute; left: 53.5%; bottom: 0;`;
       case 5: return `position: absolute; left: 69%; bottom: 0;`;
       case 6: return `position: absolute; left: 71.5%; bottom: 24.5%;`;
-      case 7: return `position: absolute; left: 67%; bottom: 49%;`;
-      case 8: return `position: absolute; left: 28.5%; bottom: 24.5%;`;
+      case 7: return `position: absolute; left: 28.5%; bottom: 24.5%;`;
+      case 8: return `position: absolute; left: 67%; bottom: 49%;`;
       case 9: return `position: absolute; left: 54.5%; bottom: 27.5%; transform: rotate(-28deg);`;
       case 10: return `position: absolute; left: 42%; bottom: 47%; transform: rotate(-14deg);`;
     }
@@ -45,7 +45,6 @@ export const TechBoxContainer = styled.div`
 
 export const TechImage = styled.img`
   width: 100%;
-  /* box-shadow: 2px 2px 5px #222; */
   border-radius: 10px;
   background-color: white;
 

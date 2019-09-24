@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { media } from '../../GlobalStyle';
+import { media, MainColor } from '../../GlobalStyle';
 
 export const FooterWrapper = styled.footer`
   width: 100%;
@@ -28,6 +28,10 @@ export const BackToTop = styled.div`
   ${media.mobile`
     right: -10px;
   `}
+
+  &:hover{
+    color: ${MainColor};
+  }
 
   i{
     display: block;
