@@ -4,6 +4,7 @@ const path = require('path');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
+  mode: 'development',
   entry: [
     '@babel/polyfill',
     'react-hot-loader/patch',
@@ -73,9 +74,5 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new BundleAnalyzerPlugin()
-  ],
-  output: {
-    path: path.resolve(__dirname, 'docs'),
-    filename: '[name].[hash].bundle.js'
-  }
+  ]
 }
