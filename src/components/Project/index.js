@@ -8,7 +8,7 @@ import {
   ProjectImage,
   PopupClose
 } from './style';
-import faTimes from '@fortawesome/free-solid-svg-icons/faTimes';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useInView } from 'react-intersection-observer';
 
 const Project = memo(({project}) => {
