@@ -80,7 +80,7 @@ const initialStore = {
       id: 9,
       techName: 'webpack',
       description: `2018년도부터 사용하였습니다.\n
-        create-react-app 같은 boilerplate를 사용하지 않고 직접 플러그인, loader들을 추가하여 개발 환경을 구축할 수 있습니다.`
+        boilerplate를 사용하지 않고 직접 설정파일을 작성하여 번들링 최적화, 개발 환경을 구축할 수 있습니다.`
     },
     {
       id: 10,
