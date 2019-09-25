@@ -5,7 +5,7 @@ import { ACTIVE_TECHNOLOGIE_REQUEST, LEAVE_TECHNOLOGIE_REQUEST } from '../../red
 import PropTypes from 'prop-types';
 import { useInView } from 'react-intersection-observer';
 import { PopupClose } from '../../components/Project/style';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import faTimes from '@fortawesome/free-solid-svg-icons/faTimes';
 
 const TechBox = memo(({ techId, techName, description }) => {
   const [activeState, setActiveState] = useState(null); // 해당 technologie 활성 상태

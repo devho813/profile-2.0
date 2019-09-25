@@ -15,8 +15,8 @@ import {
   HashSymbol
 } from './style';
 import PropTypes from 'prop-types';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import faExternalLinkAlt from '@fortawesome/free-solid-svg-icons/faExternalLinkAlt';
+import faGithub from '@fortawesome/free-brands-svg-icons/faGithub';
 
 const ProjectPopup = memo(({project, children}) => {
   const { imagePaths, siteLink, githubLink, environment, title, year, position, technologies } = project;

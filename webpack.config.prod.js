@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require('path');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -57,6 +57,17 @@ module.exports = {
       }
     ]
   },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        }
+      }
+    }
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
@@ -64,10 +75,10 @@ module.exports = {
       filename: "index.html"
     }),
     new BundleAnalyzerPlugin(),
-    new UglifyJsPlugin()
+    new CleanWebpackPlugin()
   ],
   output: {
     path: path.resolve(__dirname, 'docs'),
-    filename: '[name].[hash].bundle.js'
+    filename: '[name].[chunkhash].bundle.js'
   }
 }

@@ -8,7 +8,8 @@ import {
   QuoteContent,
   Author
 } from './style';
-import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+import faQuoteLeft from '@fortawesome/free-solid-svg-icons/faQuoteLeft';
+import faQuoteRight from '@fortawesome/free-solid-svg-icons/faQuoteRight';
 import PropTypes from 'prop-types';
 import { QUOTE_REQUEST } from '../../reducers/quote';
 

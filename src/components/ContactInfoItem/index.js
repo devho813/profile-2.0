@@ -3,7 +3,7 @@ import {ContactInfoPopup} from '../../containers/AboutMe/style';
 import phone from '../../assets/images/icon/icon_phone.svg';
 import gmail from '../../assets/images/icon/icon_gmail.svg';
 import github from '../../assets/images/icon/icon_github.svg';
-import kakaoTalk from '../../assets/images/icon/icon_kakaotalk.png';
+import kakaoTalk from '../../assets/images/icon/icon_kakaotalk.svg';
 
 const ContactInfoItem = memo(({ type, value }) => {
   const [imageURL, setImageURL] = useState(null);

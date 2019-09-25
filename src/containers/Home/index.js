@@ -1,7 +1,7 @@
 import React, {useMemo, useCallback, useRef, memo} from 'react'
 import { useSelector } from 'react-redux';
 import { FirstName, LastName, HomeContainer, HomeWrapper, SubWrapper, Name, JobNameWrapper, BaseIn, ScrollDown } from './style';
-import {throttle} from 'lodash';
+import throttle from 'lodash/throttle';
 import Proptypes from 'prop-types';
 
 const Home = memo(({LoadingDuration}) => {

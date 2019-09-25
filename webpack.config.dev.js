@@ -1,7 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require('webpack');
-const path = require('path');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   mode: 'development',
@@ -73,6 +71,5 @@ module.exports = {
       filename: "index.html"
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new BundleAnalyzerPlugin()
   ]
 }
