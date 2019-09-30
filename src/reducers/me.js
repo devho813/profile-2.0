@@ -34,9 +34,11 @@ const initialStore = {
     },
     {
       id: 3,
-      techName: 'javascript',
-      description: `2015년도부터 사용하였습니다.\n
-        가장 좋아하는 프로그래밍 언어입니다. 코어, 고급 문법을 꾸준히 학습하고 있고 브라우저 엔진에서 돌아가는 자바스크립트를 잘 이해하고 있습니다. jQuery, RapaelJS, c3.js 등등.. 다양한 오픈소스 활용하였습니다.
+      techName: 'react',
+      description: `2018년도부터 사용하였습니다.\n
+        Javascript 프레임워크, 라이브러리 중 가장 좋아하는 라이브러리입니다. 현재 포트폴리오 사이트가 React로 개발되었습니다. React Hooks로 컴포넌트 짜는것을 선호합니다.
+        상태관리는 Redux 라이브러리를 사용하고 있으며 사이드 이팩트 처리는 redux-saga 미들웨어를 사용합니다.
+        검색엔진 최적화가 필요한 웹 사이트는 next.js를 사용합니다. 렌더링 최적화에 관심이 많습니다.
       `
     },
     {
@@ -50,7 +52,7 @@ const initialStore = {
       id: 5,
       techName: 'git',
       description: `2018년도부터 사용하였습니다.\n
-        주로 SourceTree와 VSC에서 제공하는 GUI 환경에서 Git을 활용하였습니다. 원격 저장소는 Gitlab, Github를 썼고 Jira와 Confluence를 연결하여 이슈 트래킹 하였습니다.
+        주로 SourceTree와 VSC에서 제공하는 GUI 환경에서 Git을 활용하였습니다. 원격 저장소는 Gitlab, Github를 썼고 Jira와 Confluence를 연결하여 이슈 트래킹 하였습니다. Git 브랜치 전략으론는 Git-flow를 사용했습니다.
       `
     },
     {
@@ -84,11 +86,9 @@ const initialStore = {
     },
     {
       id: 10,
-      techName: 'react',
-      description: `2018년도부터 사용하였습니다.\n
-        Javascript 프레임워크, 라이브러리 중 가장 좋아하는 라이브러리입니다. 현재 포트폴리오 사이트가 React로 개발되었습니다. React Hooks로 컴포넌트 짜는것을 선호합니다.
-        상태관리는 Redux 라이브러리를 사용하고 있으며 사이드 이팩트 처리는 redux-saga 미들웨어를 사용합니다.
-        검색엔진 최적화가 필요한 웹 사이트는 next.js를 사용합니다. 렌더링 최적화에 관심이 많습니다.
+      techName: 'javascript',
+      description: `2015년도부터 사용하였습니다.\n
+        가장 좋아하는 프로그래밍 언어입니다. 코어, 고급 문법을 꾸준히 학습하고 있고 브라우저 엔진에서 돌아가는 자바스크립트를 잘 이해하고 있습니다. jQuery, RapaelJS, c3.js 등등.. 다양한 오픈소스 활용하였습니다.
       `
     },
   ],
