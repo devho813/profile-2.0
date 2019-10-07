@@ -1,7 +1,7 @@
 import React, { memo, useState, useCallback } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import { TechBoxContainer, TechImage, TechContent, BackgroundBlack, TechContent2 } from './style';
-import { ACTIVE_TECHNOLOGIE_REQUEST, LEAVE_TECHNOLOGIE_REQUEST } from '../../reducers/me';
+import { activeTechnologieRequest, leaveTechnologieRequest } from '../../modules/me';
 import PropTypes from 'prop-types';
 import { useInView } from 'react-intersection-observer';
 import { PopupClose } from '../../components/Project/style';
@@ -9,18 +9,18 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const TechBox = memo(({ techId, techName, description }) => {
   const [activeState, setActiveState] = useState(null); // 해당 technologie 활성 상태
-  const allTechActiveState = useSelector(store => store.me.allTechActiveState); // 전체 technologie 활성 상태
+  const allTechActiveState = useSelector(state => state.me.allTechActiveState); // 전체 technologie 활성 상태
   const dispatch = useDispatch();
 
   const [techBoxRef, techBoxInView] = useInView({threshold: 1, triggerOnce: true});
   
   const onShowTechContent = useCallback(() => {
     setActiveState(true);
-    dispatch({type: ACTIVE_TECHNOLOGIE_REQUEST});
+    dispatch(activeTechnologieRequest());
   }, []);
   const onHideTechContent = useCallback(() => {
     setActiveState(false);
-    dispatch({type: LEAVE_TECHNOLOGIE_REQUEST});
+    dispatch(leaveTechnologieRequest());
   }, []);
 
   return (
@@ -30,8 +30,7 @@ const TechBox = memo(({ techId, techName, description }) => {
         allTechActiveState={allTechActiveState}
         techId={techId}
         onMouseEnter={onShowTechContent}
-        onMouseLeave={onHideTechContent}
-        onClick={onShowTechContent}>
+        onMouseLeave={onHideTechContent}>
           <TechImage 
             techId={techId}
             ref={techBoxRef} inView={techBoxInView}

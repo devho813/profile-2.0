@@ -2,23 +2,19 @@ import React, { memo, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { SectionWrapper, SectionTitle, DecoBar, SectionContent } from './style';
 import Project from '../../components/Project'
-import { SECTION_POSITION_UPDATE } from '../../reducers/section';
+import { secionPositionUpdate } from '../../modules/section';
 import { useInView } from 'react-intersection-observer';
 import Fish from '../../components/Fish';
 
 const Portfolio = memo(() => {
-  const { projects } = useSelector(store => store.project);
+  const { projects } = useSelector(state => state.project);
   const dispatch = useDispatch();
   const positionRef = useRef();
 
   const [sectionTitleRef, sectionTitleInView] = useInView({threshold: 0, triggerOnce: true});
 
   useEffect(() => {
-    dispatch({
-      type: SECTION_POSITION_UPDATE,
-      id: 4,
-      data: positionRef.current.offsetTop
-    })
+    dispatch(secionPositionUpdate(4, positionRef.current.offsetTop));
   }, []);
 
 

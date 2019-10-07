@@ -5,7 +5,7 @@ import throttle from 'lodash/throttle';
 import Proptypes from 'prop-types';
 
 const Home = memo(({LoadingDuration}) => {
-  const { firstName, lastName, jobNames, basedIn } = useSelector(store => store.me);
+  const { firstName, lastName, jobNames, basedIn } = useSelector(state => state.me);
   const homeWrapperRef = useRef();
 
   const getJobNames = useMemo(() => {

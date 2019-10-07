@@ -11,7 +11,7 @@ import {animateScroll as scroll} from 'react-scroll';
 
 const GlobalNavigation = memo(() => {
   const [extendNavigation, setExtendNavigation] = useState(false);
-  const sections = useSelector(store => store.section.sections);
+  const sections = useSelector(state => state.section.sections);
   const navIconRef = useRef();
 
   const onClickNavIcon = useCallback(() => {

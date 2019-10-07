@@ -2,12 +2,12 @@ import React, {useRef, useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {SectionWrapper, SectionTitle, SectionContent, DecoBar, ContactInfoTitle, ContactInfoList} from './style';
 import ContactInfoItem from '../../components/ContactInfoItem';
-import { SECTION_POSITION_UPDATE } from '../../reducers/section';
+import { secionPositionUpdate } from '../../modules/section';
 import { useInView } from 'react-intersection-observer';
 import Fish from '../../components/Fish';
 
 const AboutMe = () => {
-  const {aboutMe, contactInfos} = useSelector(store => store.me);
+  const {aboutMe, contactInfos} = useSelector(state => state.me);
   const dispatch = useDispatch();
   const positionRef = useRef();
   
@@ -17,11 +17,7 @@ const AboutMe = () => {
   const [contactListRef, contactListInView] = useInView({threshold: 1, triggerOnce: true});
   
   useEffect(() => {
-    dispatch({
-      type: SECTION_POSITION_UPDATE,
-      id: 2,
-      data: positionRef.current.offsetTop
-    })
+    dispatch(secionPositionUpdate(2, positionRef.current.offsetTop));
   }, []);
 
   return (

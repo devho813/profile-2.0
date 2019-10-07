@@ -3,7 +3,7 @@ import { GlobalStyle } from './GlobalStyle';
 import Profile from './components/Profile';
 
 import { createStore, compose, applyMiddleware } from 'redux';
-import rootReducer from '../src/reducers';
+import rootReducer from '../src/modules';
 import { Provider } from 'react-redux' ;
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from '../src/sagas';

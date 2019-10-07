@@ -10,15 +10,15 @@ import {
 } from './style';
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
-import { QUOTE_REQUEST } from '../../reducers/quote';
+import { quoteRequest } from '../../modules/quote';
 
 const Quote = memo(({extendNavigation}) => {
-  const { quote, author, tempQuote, tempAuthor } = useSelector(store => store.quote);
+  const { quote, author, tempQuote, tempAuthor } = useSelector(state => state.quote);
   const dispatch = useDispatch();
   
   useEffect(() => {
     if(extendNavigation){
-      dispatch({type: QUOTE_REQUEST});
+      dispatch(quoteRequest());
     }
   }, [extendNavigation]);
   

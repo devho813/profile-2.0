@@ -1,6 +1,6 @@
 import produce from 'immer';
-
-const initialStore = {
+import {createAction, handleActions} from 'redux-actions';
+const initialState = {
   projects: [
     {
       id: 1,
@@ -87,17 +87,15 @@ const initialStore = {
   ]
 }
 
-export const A = 'A';
+export const TEMP = 'project/TEMP';
 
-const reducer = (store = initialStore, action) => {
-  return produce(store, (draft) => {
-    switch(action.type){
-      case A:
-        break;
-      default:
-        break;
-    }
-  })
-}
+export const tempAction = createAction(TEMP);
 
-export default reducer;
+const project = handleActions({
+  [TEMP]: (state, action) => 
+    produce(state, draft => {
+
+    })
+}, initialState);
+
+export default project;

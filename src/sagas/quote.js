@@ -1,6 +1,6 @@
 import { all, call, put, fork, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
-import { QUOTE_REQUEST, QUOTE_SUCCESS, QUOTE_FAIRURE } from '../reducers/quote';
+import { QUOTE_REQUEST, QUOTE_SUCCESS, QUOTE_FAILURE } from '../modules/quote';
 
 function quoteAPI() {
   return axios.get('https://api.quotable.io/random');
@@ -16,7 +16,7 @@ function* quoteRequest() {
   } catch (e) {
     console.log(e);
     yield put({
-      type: QUOTE_FAIRURE
+      type: QUOTE_FAILURE
     });
   }
 }

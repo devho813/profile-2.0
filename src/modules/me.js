@@ -1,6 +1,7 @@
 import produce from 'immer';
+import { createAction, handleActions } from 'redux-actions';
 
-const initialStore = {
+const initialState = {
   firstName: 'Chanho',
   lastName: 'Lee',
   // jobNames: ['FRONT-END DEVELOPER', 'JAVASCRIPT DEVELOPER'],
@@ -95,22 +96,21 @@ const initialStore = {
   allTechActiveState: false,
 }
 
-export const ACTIVE_TECHNOLOGIE_REQUEST = 'ACTIVE_TECHNOLOGIE_REQUEST';
-export const LEAVE_TECHNOLOGIE_REQUEST = 'LEAVE_TECHNOLOGIE_REQUEST';
+export const ACTIVE_TECHNOLOGIE_REQUEST = 'me/ACTIVE_TECHNOLOGIE_REQUEST';
+export const LEAVE_TECHNOLOGIE_REQUEST = 'me/LEAVE_TECHNOLOGIE_REQUEST';
 
-const reducer = (store = initialStore, action) => {
-  return produce(store, (draft) => {
-    switch(action.type){
-      case ACTIVE_TECHNOLOGIE_REQUEST:
-          draft.allTechActiveState = true;
-        break;
-      case LEAVE_TECHNOLOGIE_REQUEST:
-          draft.allTechActiveState = false;
-        break;
-      default:
-        break;
-    }
-  })
-}
+export const activeTechnologieRequest = createAction(ACTIVE_TECHNOLOGIE_REQUEST);
+export const leaveTechnologieRequest = createAction(LEAVE_TECHNOLOGIE_REQUEST);
 
-export default reducer;
+const me = handleActions({
+  [ACTIVE_TECHNOLOGIE_REQUEST]: (state, action) =>
+    produce(state, draft => {
+      draft.allTechActiveState = true;
+    }),
+  [LEAVE_TECHNOLOGIE_REQUEST]: (state, action) =>
+    produce(state, draft => {
+      draft.allTechActiveState = false;
+    }),
+}, initialState);
+
+export default me;
