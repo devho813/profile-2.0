@@ -4,4 +4,4 @@ import App from '../src/App';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
-module.hot.accept();
+process.env.NODE_ENV === 'development' && module.hot.accept();
