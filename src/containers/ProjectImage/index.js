@@ -8,18 +8,18 @@ import {
 import PropTypes from 'prop-types';
 
 const ProjectImage = ({imagePaths}) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [visibleImageIndex, setVisibleImageIndex] = useState(0);
 
   const onClickArrow = useCallback(direction => () => {
     if(direction === 'left'){
-      setCurrentImageIndex(prevState => {
+      setVisibleImageIndex(prevState => {
         if(prevState === 0){
           return imagePaths.length - 1;
         }
         return prevState - 1;
       })
     }else if(direction === 'right'){
-      setCurrentImageIndex(prevState => {
+      setVisibleImageIndex(prevState => {
         if(prevState === imagePaths.length - 1){
           return 0;
         }
@@ -29,10 +29,12 @@ const ProjectImage = ({imagePaths}) => {
       alert('잘못된 방향!');
     }
   }, []);
-
+  
   return (
     <ImageWrapper>
-      <Images src={imagePaths[currentImageIndex]} />
+      {imagePaths.map((imagePath, index) => 
+        <Images key={imagePath} src={imagePath} visible={index === visibleImageIndex} />
+      )}
       <LeftArrow onClick={onClickArrow('left')} />
       <RightArrow onClick={onClickArrow('right')} />
     </ImageWrapper>

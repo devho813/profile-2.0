@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { media } from '../../GlobalStyle';
 
 export const Images = styled.img`
+  display: ${({visible}) => visible ? `inline` : `none`};
   width: 100%;
   border-radius: 5px;
 `;
