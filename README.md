@@ -5,7 +5,7 @@ URL: https://chanholee.com/
 
 - 사용 기술
   - HTML5, CSS3
-  - React, Redux, Redux-Sage
+  - React, Redux, Redux-Actions, Redux-Saga
   - styled-components
   - immer, lodash, axios, intersection-observer, react-scroll
   - Github Page
