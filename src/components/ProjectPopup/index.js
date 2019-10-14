@@ -59,6 +59,7 @@ ProjectPopup.propTypes = {
     githubLink: PropTypes.string,
     technologies: PropTypes.arrayOf(PropTypes.string).isRequired,
     imagePaths: PropTypes.arrayOf(PropTypes.any).isRequired,
-  })
+  }),
+  children: PropTypes.element.isRequired
 }
 export default memo(ProjectPopup);
