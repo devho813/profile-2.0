@@ -60,7 +60,7 @@ const initialState = {
       id: 6,
       techName: 'typescript',
       description: `2018년도부터 사용하였습니다.\n
-        Angular 프레임워크에 사용한 언어로 2개의 프로젝트에서 약 1년 3개월 정도 사용하였습니다.
+        Angular 프레임워크에 사용한 언어로 2개의 프로젝트에서 사용하였습니다.
       `
     },
     {
