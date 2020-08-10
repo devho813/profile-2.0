@@ -11,10 +11,13 @@ const Portfolio = memo(() => {
   const dispatch = useDispatch();
   const positionRef = useRef();
 
-  const [sectionTitleRef, sectionTitleInView] = useInView({threshold: 0, triggerOnce: true});
+  const [sectionTitleRef, sectionTitleInView] = useInView({ threshold: 0, triggerOnce: true });
 
   useEffect(() => {
-    dispatch(secionPositionUpdate(4, positionRef.current.offsetTop));
+    setTimeout(() => {
+      dispatch(secionPositionUpdate(4, positionRef.current.offsetTop));
+    });
+
   }, []);
 
 
@@ -26,10 +29,10 @@ const Portfolio = memo(() => {
       </SectionTitle>
       <SectionContent>
         {projects.map(project =>
-          <Project key={project.id} project={project}/>
+          <Project key={project.id} project={project} />
         )}
       </SectionContent>
-      <Fish fishId={4}/>
+      <Fish fishId={4} />
     </SectionWrapper>
   );
 });
