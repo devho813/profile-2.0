@@ -78,7 +78,7 @@ module.exports = {
     new CleanWebpackPlugin()
   ],
   output: {
-    path: path.resolve(__dirname, 'docs'),
+    path: path.resolve(__dirname, 'build'),
     filename: '[name].[chunkhash].bundle.js'
   }
 }
